@@ -1,0 +1,45 @@
+@import "theme";
+@import "break-points";
+
+.features{
+  // margin-top: 120px; desktop
+  margin-top: 70px;
+}
+
+.featureContainer{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.featureContainer .feature + .feature{
+  //margin-top: 70px;// desktop
+  margin-top: 50px;
+}
+
+.feature{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+
+  div{
+    margin-bottom: 30px;
+  }
+
+  h2{
+    font-size: 14px;
+    color: #2d3033;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 25px;
+  }
+
+  p{
+    text-align: center;
+    line-height: 1.5;
+    color: #6c7279;
+  }
+
+
+}
