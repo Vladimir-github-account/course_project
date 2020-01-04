@@ -1,0 +1,77 @@
+@import "theme";
+@import "break-points";
+
+.works{
+  //margin-top: 125px;// desktop
+  margin-top: 75px;
+
+}
+
+.work{
+  overflow: hidden;
+  width: 100%;
+  height: 350px;
+  min-height: 350px;
+  position: relative;
+
+  box-shadow: 0 0 0 1px #fff;
+  img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    transition: all 0.2s ease-in-out;
+  }
+
+}
+
+
+.workInfo{
+  background: rgba(232, 69, 69, 0.9);
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  position: absolute;
+  transition: opacity, 0.3s;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  h3{
+    margin-bottom: 20px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: margin-bottom, 0.3s;
+  }
+  h4{
+    color: white;
+    margin-top: 20px;
+    transition: margin-top, 0.3s;
+  }
+}
+
+.work:hover img{
+  transform: scale(1.2);
+}
+
+.work:hover .workInfo {
+  opacity: 1;
+}
+
+.work:hover img{
+  transform: scale(1.2);
+}
+
+.work:hover h3 {
+  margin-bottom: 5px;
+}
+
+.work:hover h4 {
+  margin-top: 5px;
+}
+
