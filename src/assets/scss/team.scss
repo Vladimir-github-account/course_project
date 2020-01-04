@@ -44,6 +44,10 @@
       display: inline-block;
     }
 
+    li + li{
+      margin-left: 5px;
+    }
+
     a:hover, a:active{
       border-color: $accent-color;
       background-color: $accent-color;
