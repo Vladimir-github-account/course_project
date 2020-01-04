@@ -1,0 +1,57 @@
+@import "theme";
+@import "break-points";
+
+.team{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.person{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  img{
+    margin-bottom: 30px;
+  }
+
+  h3{
+    color: #2d3033;
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  h4{
+    color: $accent-color;
+    font-size: 13px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  p{
+    max-width: 270px;
+    line-height: 1.5;
+    color: #6c7279;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  ul{
+    color: #6c7279;
+    text-align: center;
+
+    li{
+      display: inline-block;
+    }
+
+    a:hover, a:active{
+      border-color: $accent-color;
+      background-color: $accent-color;
+      color: #fff;
+    }
+  }
+}
+
+.team .person + .person{
+  margin-top: 50px;
+}
