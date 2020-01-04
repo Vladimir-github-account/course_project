@@ -21,6 +21,7 @@ function onNavToggleClick(){
 
 }
 
+
 window.onscroll = checkScroll;
 
 function checkScroll(){
@@ -35,5 +36,5 @@ function checkScroll(){
 window.onload = onloadHandler;
 
 function onloadHandler() {
-  console.log('work');
+  checkScroll();
 }
