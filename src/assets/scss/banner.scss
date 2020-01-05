@@ -6,7 +6,9 @@
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 750px;
+  height: 100vh;
+  //max-height: 750px; desktop
+  max-height: 690px;
   background-color: #232844;
 }
 /*HEADER*/
@@ -124,7 +126,7 @@
   padding-top: 155px;
   desktop*/
   margin-top: 105px;
-  padding-top: 55px;
+  padding: 55px 20px 0;
   text-align: center;
   color: #fff;
   //в макете ширина ограничена примерно 970 px
@@ -133,20 +135,20 @@
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 28px;
+    font-size: 32px;
     line-height: 1.4;
-    //margin-bottom: 45px; desktop
-    margin-bottom: 20px;
+    //margin-bottom: 45px;
+    margin-bottom: 40px;
+
   }
   p{
   font-size: 22px;
   line-height: 1.5;
-  //margin-bottom: 80px; desktop
-    margin-bottom: 50px;
   }
 
   a{
-    margin: 0 auto;
+    //margin-top: 80px; desktop
+    margin: 15% auto 0;
   }
 
 }
