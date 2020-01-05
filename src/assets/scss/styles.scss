@@ -11,7 +11,6 @@ body {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   font-size: 14px;
-
   display: flex;
   flex-flow: column;
   min-height: 100vh;
@@ -39,7 +38,6 @@ a{
 }
 
 a:hover, a:active{
-
   transition: background-color, color, 0.3s;
 }
 
@@ -62,6 +60,7 @@ a:hover, a:active{
 .btnLarge{
   min-width: 230px;
   max-width: 230px;
+
   @media screen and (min-width: $lg) {
     min-width: 280px;
     max-width: 280px;
