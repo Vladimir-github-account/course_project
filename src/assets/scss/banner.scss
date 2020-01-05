@@ -144,18 +144,10 @@
   //margin-bottom: 80px; desktop
     margin-bottom: 50px;
   }
+
   a{
-    padding: 18px 50px;
+    margin: 0 auto;
   }
 
 }
 
-.btn{ //подумать куда убрать класс
-  font-weight: 600;
-  font-size: 13px;
-  text-transform: uppercase;
-  border-radius: 2px;
-  background-color: $accent-color;
-  color: white;
-  font-family: 'Raleway', sans-serif;
-}
