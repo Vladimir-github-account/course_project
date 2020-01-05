@@ -2,10 +2,29 @@
 @import "break-points";
 
 .works{
-  //margin-top: 125px;// desktop
-  margin-top: 75px;
-
+  margin-top: 60px;
+  @media screen and (min-width: $sm) {
+    margin-top: 80px;
+    display: flex;
+    flex-flow: row wrap;
+  }
 }
+
+.work:nth-child(2n){
+  @media screen and (min-width: $md) {
+    border-right: 0;
+  }
+  @media screen and (min-width: $lg) {
+    border-right: 1px solid white;
+  }
+}
+.work:nth-child(4n){
+  @media screen and (min-width: $lg) {
+    border-right: 0;
+  }
+}
+
+
 
 .work{
   overflow: hidden;
@@ -13,18 +32,25 @@
   height: 350px;
   min-height: 350px;
   position: relative;
-  box-shadow: 0 0 0 1px #fff;
+  border-bottom: 1px solid white;
   img{
     position: absolute;
     top: 0;
     left: 0;
-    width: inherit;
+    width: 100%;
     height: inherit;
     object-fit: cover;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s linear;
   }
-
+  @media screen and (min-width: $md) {
+    width: 50%;
+    border-right: 1px solid white;
+  }
+  @media screen and (min-width: $lg) {
+    width: 25%;
+  }
 }
+
 
 
 .workInfo{
