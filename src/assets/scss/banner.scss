@@ -8,16 +8,19 @@
   background-size: cover;
   min-height: 550px;
   height: 100vh;
-  //max-height: 750px; desktop
   max-height: 690px;
   background-color: #232844;
+
+  @media screen and (min-width: $sm) {
+    min-height: 750px;
+    max-height: 750px;
+  }
 }
 /*HEADER*/
 #pageHeader{
   position: fixed;
   z-index: 999;
   width: 100%;
-  //transition: padding 0.3s;
 }
 
 #pageHeader.fixed {
@@ -27,6 +30,9 @@
 #pageHeader.fixed .headerContainer {
   border-bottom: 0;
   padding: 15px 0;
+  @media screen and (min-width: $lg) {
+    padding: 20px 0;
+  }
 }
 
 .headerContainer{
@@ -34,15 +40,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /*
-  flex-direction: column;
-  @media screen and (min-width: $lg) {
-    flex-direction: row;
-  }*/
   padding: 30px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   width: 90%;
-
+  @media screen and (min-width: $md) {
+    padding: 40px 0;
+  }
 }
 
 .logo{
@@ -65,6 +68,14 @@
   opacity: 0;
   transition: opacity 0.5s, visibility 0s 0.5s;
 
+  @media screen and (min-width: $lg) {
+    position: static;
+    min-height: auto;
+    min-width: auto;
+    background: transparent;
+    opacity: 1;
+    visibility: visible;
+  }
 
   ul{
     min-height: 100vh;
@@ -73,19 +84,36 @@
     justify-content: center;
     align-items: center;
 
+    @media screen and (min-width: $lg) {
+      flex-direction: row;
+      min-height: auto;
+    }
+
     li{
       a{
-        color: #B1B1B4;// в макете цвет белый и прозрачность 0.75
+        color: rgba(255,255,255,0.75);
         font-size: 25px;
         text-transform: uppercase;
         font-weight: 700;
+
+        @media screen and (min-width: $lg) {
+          font-size: 13px;
+        }
       }
 
+      a:hover{
+        @media screen and (min-width: $lg) {
+          color: white;
+        }
+      }
     }
 
     li + li{
       margin-top: 30px;
 
+      @media screen and (min-width: $lg) {
+        margin: 0 0 0 60px;
+      }
     }
   }
 }
@@ -98,7 +126,7 @@
 
 .navToggle{
   display: flex;
-  flex-flow: column nowrap; //
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   background-color: $accent-color;
@@ -106,8 +134,11 @@
   height: 44px;
   min-width: 44px;
   max-width: 44px;
-
   z-index: 99999;
+
+  @media screen and (min-width: $lg) {
+    display: none;
+  }
   span{
     width: 18px;
     height: 3px;
@@ -123,17 +154,18 @@
 
 /*BANNER INFO CONTAINER*/
 .bannerInfoContainer{
-/*
-  padding-top: 155px;
-  desktop*/
   margin-top: 105px;
   padding: 55px 20px 0;
   text-align: center;
   color: #fff;
+  max-width: 970px;
   @media screen and (min-width: $sm) {
-    padding: 55px 30px 0;
+    padding: 95px 30px 0;
   }
-  //в макете ширина ограничена примерно 970 px
+  @media screen and (min-width: $lg) {
+    padding: 155px 30px 0;
+  }
+
   h1{
 
     font-family: "Open Sans", sans-serif;
@@ -145,7 +177,14 @@
 
     @media screen and (min-width: $sm) {
       font-size: 42px;
-      margin-bottom: 45px;
+    }
+
+    @media screen and (min-width: $md) {
+      font-size: 48px;
+    }
+
+    @media screen and (min-width: $lg) {
+      font-size: 65px;
     }
   }
   p{
@@ -154,8 +193,11 @@
   }
 
   a{
-    //margin-top: 80px; desktop
     margin: 15% auto 0;
+
+    @media screen and (min-width: $sm) {
+      margin-top: 80px;
+    }
   }
 
 }
