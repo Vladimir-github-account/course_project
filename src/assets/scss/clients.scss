@@ -2,14 +2,12 @@
 @import "break-points";
 
 .clients{
-  margin-top: 100px;
-  display: flex;
-  flex-flow: column nowrap;
+  margin-top: 10px;
   position: relative;
-}
 
-.slideList{
-
+  @media screen and (min-width: $lg) {
+    margin-top: 100px;
+  }
 }
 
 .slide{
@@ -20,21 +18,42 @@
     img{
       width: 100%;
     }
+
+    @media screen and (min-width: $lg) {
+      width: 50%;
+    }
   }
 
   blockquote{
     padding: 20px 6% 0;
     color: white;
     position: relative;
-
+    background-color: #53354a;
+    @media screen and (min-width: $lg) {
+      width: 50%;
+    }
+    @media screen and (min-width: $xl) {
+      padding: 5% 0 0 80px;
+    }
     div{
       position: relative;
       min-height: 150px;
       max-height: 150px;
-      //margin-bottom: 40px; desktop
+      width: 100%;
+      @media screen and (min-width: $sm) {
+        min-height: 105px;
+        max-height: 105px;
+      }
+      @media screen and (min-width: $lg) {
+        min-height: 150px;
+        max-height: 150px;
+      }
+      @media screen and (min-width: $xl) {
+        min-height: 175px;
+        max-height: 175px;
+      }
       p{
         font-family: 'Cardo', sans-serif;
-        //font-size: 36px; desktop
         font-size: 24px;
         font-style: italic;
         line-height: 1.2;
@@ -48,16 +67,39 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        max-width: 500px;
+        @media screen and (min-width: $sm) {
+          max-height: 105px;
+          -webkit-line-clamp: 3;
+          font-size: 28px;
+        }
+        @media screen and (min-width: $lg) {
+          max-height: 150px;
+          -webkit-line-clamp: 4;
+        }
+        @media screen and (min-width: $xl) {
+          min-height: 175px;
+          font-size: 36px;
+        }
       }
     }
 
     cite{
       display: block;
-      margin: 20px 0 70px;
+      margin: 20px 0 65px;
       font-size: 13px;
       font-weight: bold;
       text-transform: uppercase;
       color: white;
+      @media screen and (min-width: $sm) {
+        margin-top: 10px;
+      }
+      @media screen and (min-width: $lg) {
+        margin: 15px 0 0 0 ;
+      }
+      @media screen and (min-width: $xl) {
+        margin: 2% 0 0 0 ;
+      }
     }
   }
 }
@@ -66,33 +108,43 @@
   display: flex;
   flex-flow: column nowrap;
   max-width: 100%;
-  background-color: #53354a;
   opacity: 1;
+  @media screen and (min-width: $lg) {
+    flex-direction: row;
+  }
 }
 
 .sliderMenu{
   position: absolute;
+  right: 0;
   bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-
+  width: 100%;
+  text-align: center;
+  @media screen and (min-width: $lg) {
+    width: 50%;
+  }
+  @media screen and (min-width: $xl) {
+    width: 50%;
+    bottom: 6%;
+  }
   li{
-    display: block;
+    display: inline-block;
     min-width: 12px;
     max-width: 12px;
     min-height: 12px;
     max-height: 12px;
     background-color: rgba(255,255,255, 0.2);
     border-radius: 50%;
-    //cursor: pointer; for desktop
+    @media screen and (min-width: $lg) {
+      cursor: pointer;
+    }
   }
 
   li.active{
     background-color: rgba(255,255,255, 1);
-    //cursor: default; for desktop
+    @media screen and (min-width: $lg) {
+      cursor: default;
+    }
   }
 
   li + li{
