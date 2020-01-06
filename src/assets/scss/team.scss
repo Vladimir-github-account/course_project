@@ -21,8 +21,6 @@
     }
     @media screen and (min-width: $lg) {
       margin: 0 15px;
-      align-items: stretch;
-      text-align: left;
       width: 25%;
     }
 
@@ -33,7 +31,9 @@
       width: 100%;
       max-width: 270px;
       margin: 0 auto;
-
+      @media screen and (min-width: $lg) {
+        align-items: stretch;
+      }
       img{
         margin-bottom: 30px;
         width: 100%;
@@ -53,7 +53,6 @@
       }
 
       p{
-        //max-width: 270px;
         line-height: 1.5;
         color: #6c7279;
         margin-bottom: 10px;
