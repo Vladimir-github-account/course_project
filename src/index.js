@@ -3,29 +3,30 @@
 import './assets/css/reset.css';
 import './assets/scss/layout.scss';
 import './assets/scss/styles.scss';
-import Slider from './assets/js/slider.js';
+import {
+  Slider,
+  FACEBOOK_CHECK,
+  TWITTER_CHECK,
+  LINKEDIN_CHECK,
+  CLIENTS
+} from './assets/js/model/index.js';
+import {
+  header,
+  navToggle,
+  nav,
+  teamContainer,
+  clients
+} from './assets/js/viewmodel/controls.js';
 
-const header = document.getElementById('pageHeader');
-const navToggle = document.querySelector('#pageHeader .navToggle');
-const nav = document.querySelector('#pageHeader .pageNavigation');
-const teamContainer = document.querySelector('div.team');
-const facebookCheck = /(?:http:\/\/)?(?:www\.)?facebook\.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[\w\-]*\/)*([\w\-]*)/;
-const twitterCheck = /(?:http:\/\/)?(?:www\.)?twitter\.com\/(?:(?:\w)*#!\/)?(?:[\w\-]*\/)*([\w\-]*)/;
-const linkedinCheck = /(?:http:\/\/)?(?:www\.)?linkedin\.com\/(?:(?:\w)*#!\/)?(?:[\w\-]*\/)*([\w\-]*)/;
+window.onload = onloadHandler;
 
-const clients = [
-  {
-    photo: './assets/images/testimonial-1.jpg',
-    comment: '"Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam..."',
-    cite: 'Susan Sims, Interaction Designer at XYZ'
-  },
-  {
-    photo: './assets/images/testimonial-2.jpg',
-    comment: '"Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur... "',
-    cite: 'Susan Sims, Interaction Designer at XYZ'
-  },
-];
+function onloadHandler() {
+  checkScroll();
+  createTeam();
+  createClients();
+}
 
+// Mobile Navigation
 navToggle.onclick = onNavToggleClick;
 let isDisplayed = false;
 
@@ -38,6 +39,7 @@ function onNavToggleClick() {
   isDisplayed = !isDisplayed;
 }
 
+// Page Scroll
 window.onscroll = checkScroll;
 
 function checkScroll() {
@@ -49,21 +51,12 @@ function checkScroll() {
   }
 }
 
-window.onload = onloadHandler;
-
-function onloadHandler() {
-  checkScroll();
-  createTeam();
-  createClients();
-}
-
+// Create Team
 async function createTeam() {
   try {
     const response = await fetch('./data/employees.json');
     const team = await response.json();
-    console.log(team);
     team.forEach(elem => {
-          console.log(elem);
           teamContainer.appendChild(createTeamPersonElem(elem));
         }
     );
@@ -114,15 +107,15 @@ function createPersonDescriptionElem( employee ) {
 function createPersonContactsElem( employee ) {
   const personContacts = document.createElement('ul');
   employee.contacts.forEach(elem => {
-    if (facebookCheck.test(elem)) {
+    if (FACEBOOK_CHECK.test(elem)) {
       personContacts.appendChild(
           createPersonContactsListItemElem(elem, 'facebook'));
       return false;
     } else {
-      if (twitterCheck.test(elem)) {
+      if (TWITTER_CHECK.test(elem)) {
         personContacts.appendChild(
             createPersonContactsListItemElem(elem, 'twitter'));
-      } else if (linkedinCheck.test(elem)) {
+      } else if (LINKEDIN_CHECK.test(elem)) {
         personContacts.appendChild(
             createPersonContactsListItemElem(elem, 'linkedin'));
       }
@@ -161,9 +154,9 @@ function createPersonContactIconElem( social ) {
   }
 }
 
-/*CREATE CLIENTS*/
+//Create Clients
 function createClients() {
-  const slider = new Slider(clients).render();
-  document.querySelector('div.clients').appendChild(slider);
+  const slider = new Slider(CLIENTS).render();
+  clients.appendChild(slider);
 }
 
