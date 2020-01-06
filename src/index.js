@@ -3,6 +3,7 @@
 import './assets/css/reset.css';
 import './assets/scss/layout.scss';
 import './assets/scss/styles.scss';
+import Slider from './assets/js/slider.js';
 
 const header = document.getElementById('pageHeader');
 const navToggle = document.querySelector('#pageHeader .navToggle');
@@ -11,6 +12,19 @@ const teamContainer = document.querySelector('div.team');
 const facebookCheck = /(?:http:\/\/)?(?:www\.)?facebook\.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[\w\-]*\/)*([\w\-]*)/;
 const twitterCheck = /(?:http:\/\/)?(?:www\.)?twitter\.com\/(?:(?:\w)*#!\/)?(?:[\w\-]*\/)*([\w\-]*)/;
 const linkedinCheck = /(?:http:\/\/)?(?:www\.)?linkedin\.com\/(?:(?:\w)*#!\/)?(?:[\w\-]*\/)*([\w\-]*)/;
+
+const clients = [
+  {
+    photo: './assets/images/testimonial-1.jpg',
+    comment: '"Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam..."',
+    cite: 'Susan Sims, Interaction Designer at XYZ'
+  },
+  {
+    photo: './assets/images/testimonial-2.jpg',
+    comment: '"Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur... "',
+    cite: 'Susan Sims, Interaction Designer at XYZ'
+  },
+];
 
 navToggle.onclick = onNavToggleClick;
 let isDisplayed = false;
@@ -40,6 +54,7 @@ window.onload = onloadHandler;
 function onloadHandler() {
   checkScroll();
   createTeam();
+  createClients();
 }
 
 async function createTeam() {
@@ -145,3 +160,10 @@ function createPersonContactIconElem( social ) {
       return personContactIcon;
   }
 }
+
+/*CREATE CLIENTS*/
+function createClients() {
+  const slider = new Slider(clients).render();
+  document.querySelector('div.clients').appendChild(slider);
+}
+
