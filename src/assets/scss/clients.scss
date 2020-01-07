@@ -4,7 +4,6 @@
 .clientsContainer {
   margin-top: 10px;
   position: relative;
-
   @media screen and (min-width: $lg) {
     margin-top: 100px;
   }
@@ -38,7 +37,7 @@
 
   blockquote {
     padding: 20px 6% 0;
-    color: white;
+    color: #fff;
     position: relative;
     background-color: #53354a;
     @media screen and (min-width: $lg) {
@@ -107,7 +106,7 @@
       font-size: 13px;
       font-weight: bold;
       text-transform: uppercase;
-      color: white;
+      color: #fff;
       @media screen and (min-width: $sm) {
         margin-top: 10px;
       }
@@ -141,7 +140,6 @@
   @media screen and (min-width: $lg) {
     width: 50%;
   }
-
   @media screen and (min-width: $xl) {
     width: 50%;
     bottom: 6%;

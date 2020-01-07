@@ -1,11 +1,10 @@
 @import "theme";
 @import "break-points";
 
-.team{
+.team {
   margin-top: 100px;
-  display: flex;
-  flex-direction: column;
   @media screen and (min-width: $md) {
+    display: flex;
     flex-flow: row wrap;
   }
   @media screen and (min-width: $lg) {
@@ -14,7 +13,8 @@
   @media screen and (min-width: $xl) {
     padding: 0;
   }
-  div{
+
+  div {
     margin-bottom: 50px;
     @media screen and (min-width: $md) {
       width: 50%;
@@ -24,7 +24,7 @@
       width: 25%;
     }
 
-    .person{
+    .person {
       display: flex;
       flex-flow: column nowrap;
       align-items: center;
@@ -34,27 +34,28 @@
       @media screen and (min-width: $lg) {
         align-items: stretch;
       }
-      img{
+
+      img {
         margin-bottom: 30px;
         width: 100%;
       }
 
-      h3{
-        color: #2d3033;
+      h3 {
+        color: $base-color;
         font-size: 22px;
         margin-bottom: 15px;
       }
 
-      h4{
+      h4 {
         color: $accent-color;
         font-size: 13px;
         margin-bottom: 20px;
         text-transform: uppercase;
       }
 
-      p{
+      p {
         line-height: 1.5;
-        color: #6c7279;
+        color: $font-color;
         margin-bottom: 10px;
         text-align: center;
         @media screen and (min-width: $lg) {
@@ -62,24 +63,25 @@
         }
       }
 
-      ul{
-        color: #6c7279;
+      ul {
+        color: $font-color;
         text-align: center;
         @media screen and (min-width: $lg) {
           text-align: left;
         }
-        li{
+
+        li {
           display: inline-block;
           @media screen and (min-width: $lg) {
             text-align: center;
           }
         }
 
-        li + li{
+        li + li {
           margin-left: 5px;
         }
 
-        a:hover, a:active{
+        a:hover, a:active {
           border-color: $accent-color;
           background-color: $accent-color;
           color: #fff;
@@ -89,15 +91,15 @@
   }
 }
 
-.team div:first-child{
+.team div:first-child {
   @media screen and (min-width: $xl) {
     margin-left: 0;
   }
 }
 
-.team div:last-child{
-   @media screen and (min-width: $xl) {
-     margin-right: 0;
-   }
- }
+.team div:last-child {
+  @media screen and (min-width: $xl) {
+    margin-right: 0;
+  }
+}
 

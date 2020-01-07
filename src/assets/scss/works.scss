@@ -10,22 +10,6 @@
   }
 }
 
-.work:nth-child(2n){
-  @media screen and (min-width: $md) {
-    border-right: 0;
-  }
-  @media screen and (min-width: $lg) {
-    border-right: 1px solid white;
-  }
-}
-.work:nth-child(4n){
-  @media screen and (min-width: $lg) {
-    border-right: 0;
-  }
-}
-
-
-
 .work{
   overflow: hidden;
   width: 100%;
@@ -42,6 +26,7 @@
     object-fit: cover;
     transition: all 0.2s linear;
   }
+
   @media screen and (min-width: $md) {
     width: 50%;
     border-right: 1px solid white;
@@ -51,9 +36,23 @@
   }
 }
 
+.work:nth-child(2n) {
+  @media screen and (min-width: $md) {
+    border-right: 0;
+  }
+  @media screen and (min-width: $lg) {
+    border-right: 1px solid white;
+  }
+}
+
+.work:nth-child(4n) {
+  @media screen and (min-width: $lg) {
+    border-right: 0;
+  }
+}
 
 
-.workInfo{
+.workInfo {
   background: rgba(232, 69, 69, 0.9);
   height: 100%;
   width: 100%;
@@ -61,24 +60,25 @@
   top: 0;
   opacity: 0;
   position: absolute;
-  transition: opacity, 0.3s;
+  transition: opacity 0.3s;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   text-align: center;
 
-  h3{
+  h3 {
     margin-bottom: 20px;
-    color: white;
+    color: #fff;
     text-transform: uppercase;
     font-weight: 700;
-    transition: margin-bottom, 0.3s;
+    transition: margin-bottom 0.3s;
   }
-  h4{
-    color: white;
+
+  h4 {
+    color: #fff;
     margin-top: 20px;
-    transition: margin-top, 0.3s;
+    transition: margin-top 0.3s;
   }
 }
 
