@@ -110,14 +110,15 @@ function createPersonContactsElem( employee ) {
     if (FACEBOOK_CHECK.test(elem)) {
       personContacts.appendChild(
           createPersonContactsListItemElem(elem, 'facebook'));
-      return false;
     } else {
       if (TWITTER_CHECK.test(elem)) {
         personContacts.appendChild(
             createPersonContactsListItemElem(elem, 'twitter'));
-      } else if (LINKEDIN_CHECK.test(elem)) {
-        personContacts.appendChild(
-            createPersonContactsListItemElem(elem, 'linkedin'));
+      } else {
+        if (LINKEDIN_CHECK.test(elem)) {
+          personContacts.appendChild(
+              createPersonContactsListItemElem(elem, 'linkedin'));
+        }
       }
     }
   });
