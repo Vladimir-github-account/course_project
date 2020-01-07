@@ -1,10 +1,15 @@
 'use strict';
 
 export default class Slider {
+  /**
+   *
+   * @param {Array<object>} clients
+   * */
   constructor( clients ) {
     if (clients.length) {
       this._clients = clients;
       this._currentIndex = 0;
+      this.changeSlide = this.changeSlide.bind(this);
     } else {
       throw new Error();
     }
@@ -18,23 +23,40 @@ export default class Slider {
     return this._currentIndex;
   }
 
-  /*----------------------------render slider menu----------------------------*/
-  showSlide() {
-    document.querySelector('.currentSlide').classList.remove('currentSlide');
-    document.getElementById(`slide${this.dataset.slideid}`)
-            .classList
-            .add('currentSlide');
-    document.querySelector('.active').classList.remove('active');
-    this.classList.add('active');
+  /**
+   *
+   * @param {number} value
+   * */
+  set currentIndex( value ) {
+    if (isNaN(value)) {
+      throw new TypeError();
+    }
+    if (value < 0 || value > this._clients.length - 1) {
+      throw new RangeError();
+    }
+    this._currentIndex = value;
   }
 
+  changeSlide( e ) {
+    if (e.target.dataset.slideid !== this.currentIndex) {
+      this.currentIndex = e.target.dataset.slideid;
+      document.querySelector('.currentSlide').classList.remove('currentSlide');
+      document.getElementById(`slide${e.target.dataset.slideid}`)
+              .classList
+              .add('currentSlide');
+      document.querySelector('.active').classList.remove('active');
+      e.target.classList.add('active');
+    }
+  }
+
+  /*----------------------------render slider menu----------------------------*/
   renderSlideMenuListItem( index ) {
     const slideMenuListItem = document.createElement('li');
     if (this.currentIndex === index) {
       slideMenuListItem.classList.add('active');
     }
     slideMenuListItem.setAttribute('data-slideid', index);
-    slideMenuListItem.addEventListener('click', this.showSlide);
+    slideMenuListItem.addEventListener('click', this.changeSlide);
     return slideMenuListItem;
   }
 
