@@ -1,29 +1,39 @@
 @import "break-points";
+@import "theme";
 
 .download{
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
   align-items: center;
   text-align: center;
   padding: 100px 30px;
 
-  h3{
-    //font-size: 28px; desktop
+  h3 {
     font-size: 28px;
-    color: #2d3033;
+    color: $base-color;
     font-weight: 300;
     margin-bottom: 20px;
+
+    @media screen and (min-width: $md) {
+      max-width: 690px;
+    }
+    @media screen and (min-width: $lg) {
+      max-width: 66.66667%;
+    }
   }
 
-  p{
-    color: #2d3033;
+  p {
+    color: $base-color;
     font-weight: 600;
     text-transform: uppercase;
     line-height: 1.5;
     margin-bottom: 40px;
 
+    @media screen and (min-width: $md) {
+      max-width: 690px;
+    }
     @media screen and (min-width: $lg) {
+      max-width: 66.66667%;
       font-weight: bold;
     }
   }
