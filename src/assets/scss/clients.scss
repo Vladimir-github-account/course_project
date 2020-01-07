@@ -24,7 +24,7 @@
     }
   }
 
-  blockquote{
+  blockquote {
     padding: 20px 6% 0;
     color: white;
     position: relative;
@@ -35,29 +35,30 @@
     @media screen and (min-width: $xl) {
       padding: 5% 0 0 80px;
     }
-    div{
+
+    div {
       position: relative;
-      min-height: 150px;
-      max-height: 150px;
+      min-height: 125px;
+      max-height: 125px;
       width: 100%;
       @media screen and (min-width: $sm) {
         min-height: 105px;
         max-height: 105px;
       }
       @media screen and (min-width: $lg) {
-        min-height: 150px;
-        max-height: 150px;
+        min-height: 135px;
+        max-height: 135px;
       }
       @media screen and (min-width: $xl) {
         min-height: 175px;
         max-height: 175px;
       }
-      p{
+
+      p {
         font-family: 'Cardo', sans-serif;
         font-size: 24px;
         font-style: italic;
-        line-height: 1.2;
-        max-height: 150px;
+        max-height: 125px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: normal;
@@ -69,12 +70,13 @@
         transform: translateY(-50%);
         max-width: 500px;
         @media screen and (min-width: $sm) {
+          line-height: 1.2;
           max-height: 105px;
           -webkit-line-clamp: 3;
           font-size: 28px;
         }
         @media screen and (min-width: $lg) {
-          max-height: 150px;
+          max-height: 135px;
           -webkit-line-clamp: 4;
         }
         @media screen and (min-width: $xl) {
@@ -84,9 +86,12 @@
       }
     }
 
-    cite{
+    cite {
       display: block;
       margin: 20px 0 65px;
+      min-height: 26px;
+      max-height: 26px;
+      overflow: hidden;
       font-size: 13px;
       font-weight: bold;
       text-transform: uppercase;
@@ -95,10 +100,11 @@
         margin-top: 10px;
       }
       @media screen and (min-width: $lg) {
-        margin: 15px 0 0 0 ;
+        margin: 15px 0 0 0;
       }
       @media screen and (min-width: $xl) {
-        margin: 2% 0 0 0 ;
+        max-width: 500px;
+        margin: 2% 0 0 0;
       }
     }
   }
@@ -114,19 +120,23 @@
   }
 }
 
-.sliderMenu{
+/*SLIDER MENU*/
+.sliderMenu {
   position: absolute;
   right: 0;
   bottom: 30px;
   width: 100%;
   text-align: center;
+
   @media screen and (min-width: $lg) {
     width: 50%;
   }
+
   @media screen and (min-width: $xl) {
     width: 50%;
     bottom: 6%;
   }
+
   li {
     display: inline-block;
     min-width: 12px;
