@@ -49,14 +49,10 @@
 
     div {
       position: relative;
-      min-height: 125px;
-      max-height: 125px;
+      min-height: 141px;
+      max-height: 141px;
       width: 100%;
       @media screen and (min-width: $sm) {
-        min-height: 105px;
-        max-height: 105px;
-      }
-      @media screen and (min-width: $lg) {
         min-height: 135px;
         max-height: 135px;
       }
@@ -69,29 +65,19 @@
         font-family: 'Cardo', sans-serif;
         font-size: 24px;
         font-style: italic;
-        max-height: 125px;
+        max-height: 141px;
         overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: normal;
-        display: -webkit-box;
-        -webkit-line-clamp: 5;
-        -webkit-box-orient: vertical;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         max-width: 500px;
+        line-height: 1.2;
         @media screen and (min-width: $sm) {
-          line-height: 1.2;
-          max-height: 105px;
-          -webkit-line-clamp: 3;
+          max-height: 135px;
           font-size: 28px;
         }
-        @media screen and (min-width: $lg) {
-          max-height: 135px;
-          -webkit-line-clamp: 4;
-        }
         @media screen and (min-width: $xl) {
-          min-height: 175px;
+          max-height: 175px;
           font-size: 36px;
         }
       }
