@@ -14,7 +14,6 @@ body {
   display: flex;
   flex-flow: column;
   min-height: 100vh;
-
 }
 
 * {
@@ -53,8 +52,10 @@ a:hover, a:active{
   background-color: $accent-color;
   color: white;
   font-family: 'Raleway', sans-serif;
+}
 
-
+.btn:hover{
+  background-color: #e52e2e;
 }
 
 .btnLarge{
