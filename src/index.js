@@ -15,6 +15,7 @@ import {
   navToggle,
   nav,
   teamContainer,
+  navLinks,
   clients
 } from './assets/js/viewmodel/controls.js';
 
@@ -27,10 +28,13 @@ function onloadHandler() {
 }
 
 // Mobile Navigation
-navToggle.onclick = onNavToggleClick;
 let isDisplayed = false;
+navLinks.forEach(navLink =>
+  navLink.onclick = closeNavigation
+);
+navToggle.onclick = closeNavigation;
 
-function onNavToggleClick() {
+function closeNavigation() {
   if (isDisplayed) {
     nav.classList.remove('displayed');
   } else {
