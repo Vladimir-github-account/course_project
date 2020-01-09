@@ -5,4 +5,4 @@ export const navToggle = document.querySelector('#pageHeader .navToggle');
 export const nav = document.querySelector('#pageHeader .pageNavigation');
 export const teamContainer = document.getElementById('team');
 export const navLinks = document.querySelectorAll('.pageNavigation a');
-export const clients = document.getElementById('clients');
+export const clientsContainer = document.getElementById('clients');
