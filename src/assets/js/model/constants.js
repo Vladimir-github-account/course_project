@@ -3,6 +3,7 @@
 export const FACEBOOK_CHECK = /(?:http:\/\/)?(?:www\.)?facebook\.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[\w\-]*\/)*([\w\-]*)/;
 export const TWITTER_CHECK = /(?:http:\/\/)?(?:www\.)?twitter\.com\/(?:(?:\w)*#!\/)?(?:[\w\-]*\/)*([\w\-]*)/;
 export const LINKEDIN_CHECK = /(?:http:\/\/)?(?:www\.)?linkedin\.com\/(?:(?:\w)*#!\/)?(?:[\w\-]*\/)*([\w\-]*)/;
+export const HEADER_HEIGHT = 74;
 export const CLIENTS = [
   {
     photo: './assets/images/testimonial-1.jpg',

@@ -5,6 +5,7 @@ import {
   FACEBOOK_CHECK,
   TWITTER_CHECK,
   LINKEDIN_CHECK,
+  HEADER_HEIGHT,
   CLIENTS
 }             from './constants.js';
 
@@ -13,5 +14,6 @@ export {
   FACEBOOK_CHECK,
   TWITTER_CHECK,
   LINKEDIN_CHECK,
+  HEADER_HEIGHT,
   CLIENTS,
 };

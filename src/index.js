@@ -8,6 +8,7 @@ import {
   FACEBOOK_CHECK,
   TWITTER_CHECK,
   LINKEDIN_CHECK,
+  HEADER_HEIGHT,
   CLIENTS
 } from './assets/js/model/index.js';
 import {
@@ -30,8 +31,16 @@ function onloadHandler() {
 // Mobile Navigation
 let isDisplayed = false;
 navLinks.forEach(navLink =>
-  navLink.onclick = closeNavigation
+    navLink.onclick = navLinkClickHandler
 );
+
+function navLinkClickHandler( e ) {
+  e.preventDefault();
+  const element = document.querySelector(this.getAttribute('href'));
+  scrollTo(element.offsetTop - HEADER_HEIGHT);
+  closeNavigation();
+}
+
 navToggle.onclick = closeNavigation;
 
 function closeNavigation() {
@@ -41,6 +50,14 @@ function closeNavigation() {
     nav.classList.add('displayed');
   }
   isDisplayed = !isDisplayed;
+}
+
+function scrollTo( to ) {
+  window.scroll({
+    behavior: 'smooth',
+    left: 0,
+    top: to
+  });
 }
 
 // Page Scroll

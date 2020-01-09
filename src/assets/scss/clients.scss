@@ -1,8 +1,11 @@
 @import "theme";
 @import "break-points";
 
-.clientsContainer {
+#clients {
   margin-top: 10px;
+}
+
+.clientsContainer {
   position: relative;
   @media screen and (min-width: $lg) {
     margin-top: 100px;
