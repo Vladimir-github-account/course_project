@@ -91,13 +91,13 @@
   }
 }
 
-.team div:first-child {
+#team > div:first-child {
   @media screen and (min-width: $xl) {
     margin-left: 0;
   }
 }
 
-.team div:last-child {
+#team > div:last-child {
   @media screen and (min-width: $xl) {
     margin-right: 0;
   }
