@@ -52,23 +52,23 @@
   }
 
 
-  li{
+  li {
     display: inline-block;
+  }
+
+  li + li {
+    margin-left: 4px;
   }
 
   a {
     border-width: 2px !important;
   }
 
-  a:hover, a:active {
+  a:hover, a:active, a:focus {
     border-color: $accent-color;
     background-color: $accent-color;
   }
 
-
-}
-
-.footerItem h5 {
 
 }
 
