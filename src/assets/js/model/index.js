@@ -8,6 +8,7 @@ import {
   LINKEDIN_CHECK,
   EMPLOYEES_JSON,
   CLIENTS_JSON,
+  HEADER_HEIGHT,
 }             from './constants.js';
 
 export {
@@ -18,4 +19,5 @@ export {
   LINKEDIN_CHECK,
   EMPLOYEES_JSON,
   CLIENTS_JSON,
+  HEADER_HEIGHT,
 };
