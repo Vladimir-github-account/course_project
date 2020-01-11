@@ -1,6 +1,7 @@
-import { loadJson, Slider } from '../model';
+import {Slider}   from '../model';
+import {loadJson} from '../../../utils/index.js';
 
-export default async function appendClients(clientContainer, clientsJSON) {
+export default async function appendClients( clientContainer, clientsJSON ) {
   try {
     const clients = await loadJson(clientsJSON);
     const slider = new Slider(clients).render();

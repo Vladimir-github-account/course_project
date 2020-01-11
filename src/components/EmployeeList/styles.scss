@@ -1,0 +1,23 @@
+@import "../../assets/scss/break-points";
+
+.teamContainer {
+  @media screen and (min-width: $md) {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  @media screen and (min-width: $lg) {
+    flex-wrap: nowrap;
+    padding: 0 15px;
+  }
+  @media screen and (min-width: $xl) {
+    padding: 0;
+  }
+}
+
+.teamContainer > .personWrapper:first-child {
+  margin-left: 0;
+}
+
+.teamContainer > .personWrapper:last-child {
+  margin-right: 0;
+}

@@ -5,9 +5,9 @@ import './assets/scss/layout.scss';
 import './assets/scss/styles.scss';
 import {
   HEADER_HEIGHT,
-  CLIENTS_JSON,
-  EMPLOYEES_JSON,
-} from './assets/js/model/index.js';
+  CLIENTS_JSON_URL,
+  EMPLOYEES_JSON_URl,
+}                          from './constants';
 import {
   header,
   navToggle,
@@ -15,18 +15,16 @@ import {
   teamContainer,
   navLinks,
   clientsContainer,
-} from './assets/js/viewmodel/controls.js';
-
-import appendTeam from './assets/js/viewmodel/appendTeam.js';
-import appendClients from './assets/js/viewmodel/appendClients.js';
-
+}                          from './controls';
+import appendClients       from './assets/js/viewmodel/appendClients.js';
+import employeesListLoader from './components/EmployeeListLoader';
 
 window.onload = onloadHandler;
 
 function onloadHandler() {
   checkScroll();
-  appendTeam(teamContainer, EMPLOYEES_JSON);
-  appendClients(clientsContainer, CLIENTS_JSON);
+  employeesListLoader(teamContainer, EMPLOYEES_JSON_URl);
+  appendClients(clientsContainer, CLIENTS_JSON_URL);
 }
 
 // Mobile Navigation

@@ -1,0 +1,99 @@
+@import "../../assets/scss/break-points";
+@import "../../assets/scss/theme";
+
+.personWrapper {
+  margin-bottom: 50px;
+  min-width: 0;
+  @media screen and (min-width: $md) {
+    width: 50%;
+  }
+  @media screen and (min-width: $lg) {
+    margin: 0 15px;
+    width: 25%;
+  }
+
+  .person {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 270px;
+    margin: 0 auto;
+    @media screen and (min-width: $lg) {
+      align-items: stretch;
+    }
+
+    .personPhotoWrapper {
+      min-width: 100%;
+      padding-bottom: 100%;
+      position: relative;
+
+      .personPhoto {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+
+    h3 {
+      color: $base-color;
+      font-size: 22px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    h4 {
+      color: $accent-color;
+      font-size: 13px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    p {
+      line-height: 1.5;
+      color: $font-color;
+      margin-bottom: 10px;
+      text-align: center;
+      @media screen and (min-width: $lg) {
+        text-align: left;
+      }
+    }
+
+    ul {
+      color: $font-color;
+      text-align: center;
+      margin-top: auto;
+      @media screen and (min-width: $lg) {
+        text-align: left;
+      }
+
+      li {
+        display: inline-block;
+        @media screen and (min-width: $lg) {
+          text-align: center;
+        }
+      }
+
+      li + li {
+        margin-left: 5px;
+      }
+
+      a:hover, a:active {
+        border-color: $accent-color;
+        background-color: $accent-color;
+        color: #fff;
+      }
+    }
+  }
+}
