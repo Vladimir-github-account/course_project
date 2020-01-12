@@ -3,38 +3,77 @@
 
 #clients {
   margin-top: 10px;
-}
-
-.clientsContainer {
-  position: relative;
   @media screen and (min-width: $lg) {
     margin-top: 100px;
   }
 }
 
+.clientsContainer {
+  position: relative;
+}
+
 /*SLIDE*/
 .slide {
-  opacity: 0.5;
+  opacity: 0;
   display: flex;
   flex-flow: column nowrap;
   max-width: 100%;
   position: absolute;
-  transition: opacity 0.8s ease 0s;
+  transition: opacity 1.4s ease 0s;
   z-index: 1;
   top: 0;
   right: 0;
   left: 0;
-  @media screen and (min-width: $lg) {
+  @media screen and (min-width: $md) {
     flex-direction: row;
   }
 
-  div {
-    img {
-      width: 100%;
+  .clientPhotoWrapper {
+    overflow: hidden;
+    min-width: 100%;
+    padding-bottom: 50.150451%;
+    position: relative;
+    background-color: rgba(83, 53, 74, 1);
+    @media screen and (min-width: $md) {
+      min-width: 50%;
+      max-width: 50%;
+      padding-bottom: 25.0752257%;
     }
 
-    @media screen and (min-width: $lg) {
-      width: 50%;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /*      @media screen and (min-width: $lg) {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%,-50%);
+              // top:0; ?
+              // left:0 ?
+              //position: absolute;
+              //width: 100%;
+              //height: 100%;
+              //object-fit: cover;
+            }*/
+      @media screen and (min-width: $md) {
+
+        // top:0; ?
+        // left:0 ?
+        //position: absolute;
+        //width: 100%;
+        //height: 100%;
+        //object-fit: cover;
+      }
+    }
+
+    .height100 {
+      height: 100%;
+    }
+
+    .width100 {
+      width: 100%;
     }
   }
 
@@ -43,7 +82,7 @@
     color: #fff;
     position: relative;
     background-color: #53354a;
-    @media screen and (min-width: $lg) {
+    @media screen and (min-width: $md) {
       width: 50%;
     }
     @media screen and (min-width: $xl) {
@@ -56,6 +95,14 @@
       max-height: 141px;
       width: 100%;
       @media screen and (min-width: $sm) {
+        min-height: 135px;
+        max-height: 135px;
+      }
+      @media screen and (min-width: $md) {
+        min-height: 120px;
+        max-height: 120px;
+      }
+      @media screen and (min-width: $lg) {
         min-height: 135px;
         max-height: 135px;
       }
@@ -79,6 +126,14 @@
           max-height: 135px;
           font-size: 28px;
         }
+        @media screen and (min-width: $md) {
+          max-height: 120px;
+          font-size: 20px;
+        }
+        @media screen and (min-width: $lg) {
+          max-height: 135px;
+          font-size: 28px;
+        }
         @media screen and (min-width: $xl) {
           max-height: 175px;
           font-size: 36px;
@@ -88,7 +143,7 @@
 
     cite {
       display: block;
-      margin: 20px 0 65px;
+      margin: 20px 0 45px;
       min-height: 26px;
       max-height: 26px;
       overflow: hidden;
@@ -98,6 +153,9 @@
       color: #fff;
       @media screen and (min-width: $sm) {
         margin-top: 10px;
+      }
+      @media screen and (min-width: $md) {
+        margin: 5px 0 0;
       }
       @media screen and (min-width: $lg) {
         margin: 15px 0 0 0;
@@ -113,8 +171,14 @@
 .currentSlide {
   opacity: 1;
   position: relative;
+  z-index: 3;
+  transition: opacity 2s ease 0s;
+}
+
+.prevSlide {
+  opacity: 0.3;
   z-index: 2;
-  transition: opacity 0.8s ease 0s;
+  transition: opacity 2s ease 0s;
 }
 
 /*SLIDER MENU*/
@@ -122,16 +186,12 @@
   position: absolute;
   z-index: 3;
   right: 0;
-  bottom: 30px;
+  bottom: 25px;
   width: 100%;
   text-align: center;
-
-  @media screen and (min-width: $lg) {
+  @media screen and (min-width: $md) {
     width: 50%;
-  }
-  @media screen and (min-width: $xl) {
-    width: 50%;
-    bottom: 6%;
+    bottom: 7%;
   }
 
   li {
@@ -142,6 +202,7 @@
     max-height: 12px;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
+
     @media screen and (min-width: $lg) {
       cursor: pointer;
     }

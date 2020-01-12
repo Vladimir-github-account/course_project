@@ -9,6 +9,7 @@ export default class Slider {
     if (clients.length) {
       this._clients = clients;
       this._currentIndex = 0;
+      this._prevSlide = null;
       this.changeSlide = this.changeSlide.bind(this);
     } else {
       throw new Error();
@@ -21,6 +22,14 @@ export default class Slider {
 
   get currentIndex() {
     return this._currentIndex;
+  }
+
+  get prevSlide() {
+    return this._prevSlide;
+  }
+
+  set prevSlide( value ) {
+    this._prevSlide = value;
   }
 
   /**
@@ -39,8 +48,14 @@ export default class Slider {
 
   changeSlide( e ) {
     if (e.target.dataset.slideid !== this.currentIndex) {
-      this.currentIndex = e.target.dataset.slideid;
-      document.querySelector('.currentSlide').classList.remove('currentSlide');
+      this.currentIndex = +e.target.dataset.slideid;
+      if (this.prevSlide) {
+        this.prevSlide.classList.remove('prevSlide');
+      }
+      const currentSlide = document.querySelector('.currentSlide');
+      this.prevSlide = currentSlide;
+      currentSlide.classList.remove('currentSlide');
+      currentSlide.classList.add('prevSlide');
       document.getElementById(`slide${e.target.dataset.slideid}`)
               .classList
               .add('currentSlide');
@@ -96,14 +111,23 @@ export default class Slider {
   }
 
   renderClientPhoto( photo ) {
+
     const clientPhoto = new Image();
     clientPhoto.src = photo;
+    clientPhoto.onload = () => {
+      if ((clientPhoto.width / clientPhoto.height) < (997 / 500)) {
+        clientPhoto.classList.add('height100');
+      } else {
+        clientPhoto.classList.add('width100');
+      }
+    };
     clientPhoto.alt = 'client photo';
     return clientPhoto;
   }
 
   renderClientPhotoWrapper( photo ) {
     const clientPhotoWrapper = document.createElement('div');
+    clientPhotoWrapper.classList.add('clientPhotoWrapper');
     clientPhotoWrapper.appendChild(this.renderClientPhoto(photo));
     return clientPhotoWrapper;
   }
