@@ -5,6 +5,7 @@
 @import "team";
 @import "clients";
 @import "download";
+@import "openWork";
 
 body {
   font-family: 'Raleway', sans-serif;
@@ -20,7 +21,6 @@ body {
   scroll-behavior: smooth;
 }
 
-
 .socialIcons, .person a, .footerItem a {
   border: 1px solid rgb(232, 236, 238);
   border-radius: 2px;
@@ -29,7 +29,6 @@ body {
   height: 40px;
   line-height: 40px;
 }
-
 
 a{
   text-decoration: none;
@@ -67,3 +66,4 @@ a:hover, a:active, a:focus {
     max-width: 280px;
   }
 }
+

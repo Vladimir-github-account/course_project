@@ -15,6 +15,10 @@ import {
   teamContainer,
   navLinks,
   clientsContainer,
+  works,
+  openedWork,
+  openedWorkImage,
+  closeWorkButton,
 }                          from './controls';
 import appendClients       from './assets/js/viewmodel/appendClients.js';
 import employeesListLoader from './components/EmployeeListLoader';
@@ -27,10 +31,36 @@ function onloadHandler() {
   appendClients(clientsContainer, CLIENTS_JSON_URL);
 }
 
+//Open work
+works.forEach(work => work.onclick = openWork);
+
+function openWork( e ) {
+  if (e.currentTarget.childNodes[0].naturalWidth) {
+    openedWorkImage.src = e.currentTarget.childNodes[0].src;
+    openedWork.classList.add('opened');
+  }
+}
+
+//Close work
+openedWork.onmouseup = openedWorkMouseUpHandler;
+closeWorkButton.onclick = closeWork;
+
+function openedWorkMouseUpHandler( e ) {
+  if (e.target === openedWork) {
+    closeWork();
+  }
+}
+
+function closeWork() {
+  if (openedWork.classList.contains('opened')) {
+    openedWork.classList.remove('opened');
+  }
+}
+
 // Mobile Navigation
 let isDisplayed = false;
 navLinks.forEach(navLink =>
-  navLink.onclick = navLinkClickHandler
+    navLink.onclick = navLinkClickHandler
 );
 navToggle.onclick = closeNavigation;
 
@@ -69,6 +99,5 @@ function checkScroll() {
     header.classList.remove('fixed');
   }
 }
-
 
 
