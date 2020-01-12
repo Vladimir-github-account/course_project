@@ -10,6 +10,7 @@
 
 .clientsContainer {
   position: relative;
+  background-color: #53354a;
 }
 
 /*SLIDE*/
@@ -33,7 +34,7 @@
     min-width: 100%;
     padding-bottom: 50.150451%;
     position: relative;
-    background-color: rgba(83, 53, 74, 1);
+    background-color: #53354a;
     @media screen and (min-width: $md) {
       min-width: 50%;
       max-width: 50%;
