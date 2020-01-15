@@ -20,15 +20,14 @@ import {
   openedWorkImage,
   closeWorkButton,
 }                          from './controls';
-import appendClients       from './assets/js/viewmodel/appendClients.js';
 import employeesListLoader from './components/EmployeeListLoader';
-
+import SliderLoader        from './components/SliderLoader';
 window.onload = onloadHandler;
 
 function onloadHandler() {
   checkScroll();
   employeesListLoader(teamContainer, EMPLOYEES_JSON_URl);
-  appendClients(clientsContainer, CLIENTS_JSON_URL);
+  new SliderLoader(clientsContainer, CLIENTS_JSON_URL);
 }
 
 //Open work
