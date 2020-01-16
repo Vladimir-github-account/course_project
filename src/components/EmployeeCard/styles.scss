@@ -48,6 +48,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      max-width: 270px;
     }
 
     h4 {
@@ -58,6 +59,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      max-width: 270px;
     }
 
     p {
@@ -74,19 +76,17 @@
       color: $font-color;
       text-align: center;
       margin-top: auto;
+      margin-left: -5px;
       @media screen and (min-width: $lg) {
         text-align: left;
       }
 
       li {
         display: inline-block;
+        margin-left: 5px;
         @media screen and (min-width: $lg) {
           text-align: center;
         }
-      }
-
-      li + li {
-        margin-left: 5px;
       }
 
       a:hover, a:active {
