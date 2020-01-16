@@ -2,7 +2,7 @@
 
 import './styles.scss';
 
-class Slider {
+export default class Slider {
   /**
    *
    * @param {Array<object>} clients
@@ -55,9 +55,18 @@ class Slider {
     }
   }
 
+  /**
+   *
+   * @param {HTMLImageElement} image
+   * @returns {boolean}
+   */
   static isCorrectImage( image ) {
-    const imageProportions = image.width / image.height;
-    return (imageProportions * 1.3) > (997 / 500);
+    if (image instanceof HTMLImageElement) {
+      const imageProportions = image.width / image.height;
+      return (imageProportions * 1.3) > (997 / 500);
+    } else {
+      throw new TypeError();
+    }
   }
 
   /*----------------------------render slider menu----------------------------*/
@@ -151,8 +160,4 @@ class Slider {
     clientsContainer.appendChild(this.renderSlideMenu(this.clients));
     return clientsContainer;
   }
-}
-
-export default function appendClients( clients ) {
-  return new Slider(clients).render();
 }

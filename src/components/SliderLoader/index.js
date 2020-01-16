@@ -1,9 +1,14 @@
-import createSlider     from '../Slider';
+import Slider           from '../Slider';
 import {loadJson}       from '../../utils';
 import {Spinner}        from 'spin.js';
 import {spinnerOptions} from '../../constants/index.js';
 
 export default class SliderLoader {
+  /**
+   *
+   * @param {HTMLElement} sliderContainer
+   * @param {string} url
+   */
   constructor( sliderContainer, url ) {
     this._sliderContainer = sliderContainer;
     this._clients = null;
@@ -32,6 +37,10 @@ export default class SliderLoader {
     return this._clients;
   }
 
+  /**
+   *
+   * @param {Array<Object>} value
+   */
   set clients( value ) {
     this._clients = value;
   }
@@ -40,6 +49,10 @@ export default class SliderLoader {
     return this._isFetching;
   }
 
+  /**
+   *
+   * @param {boolean} value
+   */
   set isFetching( value ) {
     if (typeof value !== 'boolean') {
       throw new TypeError();
@@ -66,6 +79,11 @@ export default class SliderLoader {
     }
   }
 
+  /**
+   *
+   * @param {string} url
+   * @returns {Promise<void>}
+   */
   async setClients( url ) {
     try {
       const clients = await loadJson(url);
@@ -82,6 +100,10 @@ export default class SliderLoader {
     }
   }
 
+  /**
+   *
+   * @param {string} url
+   */
   loadSlider( url ) {
     this.onload = () => {
       this.render();
@@ -109,8 +131,10 @@ export default class SliderLoader {
     } else if (this.error) {
       this.renderError();
     } else {
-      this.sliderContainer.replaceChild(createSlider(this.clients),
-          this.loadingElem);
+      this.sliderContainer.replaceChild(
+          new Slider(this.clients).render(),
+          this.loadingElem
+      );
     }
   }
 }

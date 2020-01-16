@@ -3,14 +3,12 @@ import {loadJson}         from '../../utils';
 import {Spinner}          from 'spin.js';
 import {spinnerOptions}   from '../../constants/index.js';
 
-/**
- *
- * @param teamContainer
- * @param employeesJSON
- * @returns {Promise<void>}
- */
-
 export default class EmployeeListLoader {
+  /**
+   *
+   * @param {HTMLElement} employeeListContainer
+   * @param {string} url
+   */
   constructor( employeeListContainer, url ) {
     this._employeeListContainer = employeeListContainer;
     this._employees = null;
@@ -25,6 +23,10 @@ export default class EmployeeListLoader {
     return this._loadingElem;
   }
 
+  /**
+   *
+   * @param {HTMLElement} value
+   */
   set loadingElem( value ) {
     if (value instanceof HTMLElement) {
       this._loadingElem = value;
@@ -39,6 +41,10 @@ export default class EmployeeListLoader {
     return this._employees;
   }
 
+  /**
+   *
+   * @param {Array <Object>} value
+   */
   set employees( value ) {
     this._employees = value;
   }
@@ -47,6 +53,10 @@ export default class EmployeeListLoader {
     return this._isFetching;
   }
 
+  /**
+   *
+   * @param {Boolean} value
+   */
   set isFetching( value ) {
     if (typeof value !== 'boolean') {
       throw new TypeError();
@@ -73,6 +83,11 @@ export default class EmployeeListLoader {
     }
   }
 
+  /**
+   *
+   * @param {string} url
+   * @returns {Promise<void>}
+   */
   async setEmployees( url ) {
     try {
       const employees = await loadJson(url);
@@ -89,6 +104,10 @@ export default class EmployeeListLoader {
     }
   }
 
+  /**
+   *
+   * @param {string} url
+   */
   loadTeam( url ) {
     this.onload = () => {
       this.render();
