@@ -1,0 +1,29 @@
+@import "theme";
+@import "break-points";
+
+.btn {
+  display: block;
+  min-width: 200px;
+  max-width: 200px;
+  padding: 18px 0;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  background-color: $accent-color;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+.btn:hover {
+  background-color: #e52e2e;
+}
+
+.btnLarge {
+  min-width: 230px;
+  max-width: 230px;
+  @media screen and (min-width: $lg) {
+    min-width: 280px;
+    max-width: 280px;
+  }
+}

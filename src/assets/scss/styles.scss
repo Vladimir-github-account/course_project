@@ -1,3 +1,4 @@
+@import "buttons";
 @import "footer";
 @import "banner";
 @import "features";
@@ -36,34 +37,14 @@ a{
 }
 
 a:hover, a:active, a:focus {
-  transition: background-color, color, 0.3s;
+  transition: background-color 0.5s, color 0.25s;
 }
 
-.btn{
-  display: block;
-  min-width: 200px;
-  max-width: 200px;
-  padding: 18px 0;
-  font-weight: 600;
-  font-size: 13px;
-  text-transform: uppercase;
-  border-radius: 2px;
-  background-color: $accent-color;
-  color: white;
-  font-family: 'Raleway', sans-serif;
+a:focus, a:active {
+  outline: 0;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.btn:hover{
-  background-color: #e52e2e;
-}
 
-.btnLarge{
-  min-width: 230px;
-  max-width: 230px;
-
-  @media screen and (min-width: $lg) {
-    min-width: 280px;
-    max-width: 280px;
-  }
-}
 
