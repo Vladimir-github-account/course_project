@@ -7,6 +7,7 @@
 @import "clients";
 @import "download";
 @import "openWork";
+@import "theme";
 
 body {
   font-family: 'Raleway', sans-serif;
@@ -22,6 +23,10 @@ body {
   scroll-behavior: smooth;
 }
 
+*::selection {
+  background-color: rgba($accent-color, 0.2);
+}
+
 .socialIcons, .person a, .footerItem a {
   border: 1px solid rgb(232, 236, 238);
   border-radius: 2px;
@@ -31,7 +36,7 @@ body {
   line-height: 40px;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
