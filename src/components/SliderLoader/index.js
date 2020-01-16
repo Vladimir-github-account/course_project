@@ -39,22 +39,6 @@ export default class SliderLoader {
     }
   }
 
-  async setClients( url ) {
-    try {
-      const clients = await loadJson(url);
-      if (Array.isArray(clients)) {
-        this.clients = clients;
-        this._error = null;
-        this.isFetching = false;
-      } else {
-        throw new TypeError('Wrong data type');
-      }
-    } catch(e) {
-      this.error = e;
-      console.error(e);
-    }
-  }
-
   get error() {
     return this._error;
   }
@@ -71,6 +55,22 @@ export default class SliderLoader {
     }
   }
 
+  async setClients( url ) {
+    try {
+      const clients = await loadJson(url);
+      if (Array.isArray(clients)) {
+        this.clients = clients;
+        this._error = null;
+        this.isFetching = false;
+      } else {
+        throw new TypeError('Wrong data type');
+      }
+    } catch(e) {
+      this.error = e;
+      console.error(e);
+    }
+  }
+
   loadSlider( url ) {
     this.onload = () => {
       this.render();
@@ -79,6 +79,7 @@ export default class SliderLoader {
       this.render();
     };
     this.isFetching = true;
+
     this.setClients(url);
     this.render();
   };
@@ -98,7 +99,7 @@ export default class SliderLoader {
     } else if (this.error) {
       this.renderError();
     } else {
-      const spinner = document.querySelector('.spinner');
+      const spinner = document.querySelector('#clients .spinner');
       this.sliderContainer.replaceChild(createSlider(this.clients), spinner);
     }
   }

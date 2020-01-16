@@ -27,7 +27,7 @@ window.onload = onloadHandler;
 
 function onloadHandler() {
   checkScroll();
-  employeesListLoader(teamContainer, EMPLOYEES_JSON_URl);
+  new employeesListLoader(teamContainer, EMPLOYEES_JSON_URl);
   new SliderLoader(clientsContainer, CLIENTS_JSON_URL);
 }
 
