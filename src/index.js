@@ -3,6 +3,7 @@
 import './assets/css/reset.css';
 import './assets/scss/layout.scss';
 import './assets/scss/styles.scss';
+import 'spin.js/spin.css';
 import {
   HEADER_HEIGHT,
   CLIENTS_JSON_URL,

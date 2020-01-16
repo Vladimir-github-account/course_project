@@ -1,0 +1,195 @@
+@import "../../assets/scss/theme";
+@import "../../assets/scss/break-points";
+
+.clientsContainer {
+  position: relative;
+  background-color: #53354a;
+}
+
+/*SLIDE*/
+.slide {
+  opacity: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 100%;
+  position: absolute;
+  transition: opacity 1.4s ease 0s;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: #53354a;
+  @media screen and (min-width: $md) {
+    flex-direction: row;
+  }
+
+  .clientPhotoWrapper {
+    overflow: hidden;
+    min-width: 100%;
+    padding-bottom: 50.15%;
+    position: relative;
+
+    @media screen and (min-width: $md) {
+      min-width: 50%;
+      max-width: 50%;
+      padding-bottom: 25.075%;
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .height100 {
+      height: 100%;
+    }
+
+    .correctImage {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  blockquote {
+    padding: 3% 6% 0;
+    color: #fff;
+    position: relative;
+    @media screen and (min-width: $md) {
+      width: 50%;
+    }
+    @media screen and (min-width: $xl) {
+      padding: 5% 0 0 80px;
+    }
+
+    div {
+      position: relative;
+      min-height: 141px;
+      max-height: 141px;
+      width: 100%;
+      @media screen and (min-width: $sm) {
+        min-height: 135px;
+        max-height: 135px;
+      }
+      @media screen and (min-width: $md) {
+        min-height: 120px;
+        max-height: 120px;
+      }
+      @media screen and (min-width: $lg) {
+        min-height: 135px;
+        max-height: 135px;
+      }
+      @media screen and (min-width: $xl) {
+        min-height: 175px;
+        max-height: 175px;
+      }
+
+      p {
+        font-family: 'Cardo', sans-serif;
+        font-size: 24px;
+        font-style: italic;
+        max-height: 141px;
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        max-width: 500px;
+        line-height: 1.2;
+        @media screen and (min-width: $sm) {
+          max-height: 135px;
+          font-size: 28px;
+        }
+        @media screen and (min-width: $md) {
+          max-height: 120px;
+          font-size: 20px;
+        }
+        @media screen and (min-width: $lg) {
+          max-height: 135px;
+          font-size: 28px;
+        }
+        @media screen and (min-width: $xl) {
+          max-height: 175px;
+          font-size: 36px;
+        }
+      }
+    }
+
+    cite {
+      display: block;
+      margin: 20px 0 45px;
+      min-height: 26px;
+      max-height: 26px;
+      overflow: hidden;
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #fff;
+      @media screen and (min-width: $sm) {
+        margin-top: 10px;
+      }
+      @media screen and (min-width: $md) {
+        margin: 5px 0 0;
+      }
+      @media screen and (min-width: $lg) {
+        margin: 15px 0 0 0;
+      }
+      @media screen and (min-width: $xl) {
+        max-width: 500px;
+        margin: 2% 0 0 0;
+      }
+    }
+  }
+}
+
+.currentSlide {
+  opacity: 1;
+  position: relative;
+  z-index: 2;
+  transition: opacity 2s ease 0s;
+}
+
+
+/*SLIDER MENU*/
+.sliderMenu {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 25px;
+  width: 100%;
+  text-align: center;
+  @media screen and (min-width: $md) {
+    width: 50%;
+    bottom: 7%;
+  }
+
+  li {
+    display: inline-block;
+    min-width: 12px;
+    max-width: 12px;
+    min-height: 12px;
+    max-height: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+
+    @media screen and (min-width: $lg) {
+      cursor: pointer;
+    }
+  }
+
+  li:hover {
+    background-color: rgba(255, 255, 255, 1);
+  }
+
+  li.active {
+    background-color: rgba(255, 255, 255, 1);
+    @media screen and (min-width: $lg) {
+      cursor: default;
+    }
+  }
+
+  li + li {
+    margin-left: 12px;
+  }
+}

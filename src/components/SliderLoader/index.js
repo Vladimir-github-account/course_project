@@ -1,5 +1,7 @@
-import createSlider from '../Slider';
-import {loadJson}   from '../../utils';
+import createSlider     from '../Slider';
+import {loadJson}       from '../../utils';
+import {Spinner}        from 'spin.js';
+import {spinnerOptions} from '../../constants/index.js';
 
 export default class SliderLoader {
   constructor( sliderContainer, url ) {
@@ -81,19 +83,23 @@ export default class SliderLoader {
     this.render();
   };
 
+  renderError() {
+    const spinner = document.querySelector('.spinner');
+    spinner.remove();
+  }
+
+  renderLoading() {
+    new Spinner(spinnerOptions).spin(this.sliderContainer);
+  }
+
   render() {
     if (this.isFetching) {
-      const clientsContainer = document.createElement('div');
-      clientsContainer.classList.add('clientsContainer');
-      clientsContainer.innerText = 'LOADING...';
-      this.sliderContainer.append(clientsContainer);
+      this.renderLoading();
     } else if (this.error) {
-      document.querySelector('.clientsContainer').remove();
+      this.renderError();
     } else {
-      this.sliderContainer.replaceChild(
-          createSlider(this.clients),
-          document.querySelector('.clientsContainer')
-      );
+      const spinner = document.querySelector('.spinner');
+      this.sliderContainer.replaceChild(createSlider(this.clients), spinner);
     }
   }
 }

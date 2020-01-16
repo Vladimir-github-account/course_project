@@ -1,6 +1,6 @@
 'use strict';
 
-//import './styles.scss';
+import './styles.scss';
 
 class Slider {
   /**
