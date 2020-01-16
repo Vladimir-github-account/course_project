@@ -84,18 +84,27 @@
 
 
 .work:hover .workInfo {
-  opacity: 1;
+  @media screen and (min-width: $lg){
+    opacity: 1;
+  }
 }
 
 .work:hover img{
-  transform: scale(1.2);
+  @media screen and (min-width: $lg) {
+    transform: scale(1.2);
+  }
 }
 
 .work:hover h3 {
-  margin-bottom: 5px;
+  @media screen and (min-width: $lg){
+    margin-bottom: 5px;
+  }
 }
 
 .work:hover h4 {
-  margin-top: 5px;
+  @media screen and (min-width: $lg){
+    margin-top: 5px;
+
+  }
 }
 
