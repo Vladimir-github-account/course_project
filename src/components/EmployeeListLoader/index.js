@@ -17,7 +17,18 @@ export default class EmployeeListLoader {
     this._error = null;
     this._isFetching = false;
     this.onload = null;
+    this._loadingElem = null;
     this.loadTeam(url);
+  }
+
+  get loadingElem() {
+    return this._loadingElem;
+  }
+
+  set loadingElem( value ) {
+    if (value instanceof HTMLElement) {
+      this._loadingElem = value;
+    } else throw new TypeError();
   }
 
   get employeeListContainer() {
@@ -91,12 +102,12 @@ export default class EmployeeListLoader {
   };
 
   renderError() {
-    const spinner = document.querySelector('.spinner');
-    spinner.remove();
+    this.loadingElem.remove();
   }
 
   renderLoading() {
-    new Spinner(spinnerOptions).spin(this.employeeListContainer);
+    this.loadingElem = new Spinner(spinnerOptions).spin(
+        this.employeeListContainer).el;
   }
 
   render() {
@@ -105,9 +116,8 @@ export default class EmployeeListLoader {
     } else if (this.error) {
       this.renderError();
     } else {
-      const spinner = document.querySelector(`#team .spinner`);
       this.employeeListContainer.replaceChild(
-          createEmployeeList(this.employees), spinner);
+          createEmployeeList(this.employees), this.loadingElem);
     }
   }
 }

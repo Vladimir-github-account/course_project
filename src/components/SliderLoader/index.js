@@ -10,7 +10,18 @@ export default class SliderLoader {
     this._error = null;
     this._isFetching = false;
     this.onload = null;
+    this._loadingElem = null;
     this.loadSlider(url);
+  }
+
+  get loadingElem() {
+    return this._loadingElem;
+  }
+
+  set loadingElem( value ) {
+    if (value instanceof HTMLElement) {
+      this._loadingElem = value;
+    } else throw new TypeError();
   }
 
   get sliderContainer() {
@@ -66,8 +77,8 @@ export default class SliderLoader {
         throw new TypeError('Wrong data type');
       }
     } catch(e) {
-      this.error = e;
       console.error(e);
+      this.error = e;
     }
   }
 
@@ -79,18 +90,17 @@ export default class SliderLoader {
       this.render();
     };
     this.isFetching = true;
-
     this.setClients(url);
     this.render();
   };
 
   renderError() {
-    const spinner = document.querySelector('.spinner');
-    spinner.remove();
+    this.loadingElem.remove();
   }
 
   renderLoading() {
-    new Spinner(spinnerOptions).spin(this.sliderContainer);
+    this.loadingElem = new Spinner(spinnerOptions).spin(
+        this.sliderContainer).el;
   }
 
   render() {
@@ -99,8 +109,8 @@ export default class SliderLoader {
     } else if (this.error) {
       this.renderError();
     } else {
-      const spinner = document.querySelector('#clients .spinner');
-      this.sliderContainer.replaceChild(createSlider(this.clients), spinner);
+      this.sliderContainer.replaceChild(createSlider(this.clients),
+          this.loadingElem);
     }
   }
 }
