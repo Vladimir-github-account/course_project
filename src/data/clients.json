@@ -2,11 +2,31 @@
   {
     "photo": "./assets/images/testimonial-1.jpg",
     "comment": "\"Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...\"",
-    "cite": "Susan Sims, Interaction Designer at XYZ"
+    "author": {
+      "name": "Susan",
+      "surname": "Sims",
+      "position": "Interaction Designer",
+      "company": "Google"
+    }
   },
   {
     "photo": "./assets/images/testimonial-2.jpg",
     "comment": "\"Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur... \"",
-    "cite": "Joe Dou, Interaction Designer at XYZ"
+    "author": {
+      "name": "Joe",
+      "surname": "Dou",
+      "position": "Interaction Designer",
+      "company": "Apple"
+    }
+  },
+  {
+    "photo": "./assets/images/testimonial-3.jpg",
+    "comment": "\"Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean lacinia bibendusadsadsadam nulla sed consectetur... \"",
+    "author": {
+      "name": "Olivia",
+      "surname": "Smith",
+      "position": "Interaction Designer",
+      "company": "Google"
+    }
   }
 ]
