@@ -131,10 +131,12 @@ export default class SliderLoader {
     } else if (this.error) {
       this.renderError();
     } else {
+      const slider = new Slider(this.clients);
       this.sliderContainer.replaceChild(
-          new Slider(this.clients).render(),
+          slider.render(),
           this.loadingElem
       );
+      slider.autoChange();
     }
   }
 }

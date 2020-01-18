@@ -11,10 +11,35 @@ export default class Slider {
     if (clients.length) {
       this._clients = clients;
       this._currentIndex = 0;
+      this._nextSlideIndex = null;
+      this._interval = null;
       this.changeSlide = this.changeSlide.bind(this);
     } else {
       throw new Error();
     }
+  }
+
+  get interval() {
+    return this._interval;
+  }
+
+  set interval( value ) {
+    this._interval = value;
+  }
+
+  get nextSlideIndex() {
+    return this._nextSlideIndex;
+  }
+
+  /**
+   *
+   * @param {number} value
+   */
+  set nextSlideIndex( value ) {
+    if (value < 0 || value > this.clients.length - 1) {
+      throw new RangeError();
+    }
+    this._nextSlideIndex = value;
   }
 
   get clients() {
@@ -39,7 +64,52 @@ export default class Slider {
     this._currentIndex = value;
   }
 
+  /**
+   *
+   * @param {number} index
+   * @param {number} length
+   * @return {number} - next slide index in carousel
+   * @static
+   */
+  static getNextIndex( index, length ) {
+    if (index < 0 || index > length - 1) {
+      throw new RangeError();
+    }
+    return (index + 1) % length;
+  }
+
+  autoChange() {
+    this.interval = setInterval(() => {
+      this.nextSlideIndex = Slider.getNextIndex(this.currentIndex,
+          this.clients.length);
+      this.nextSlide(this.nextSlideIndex);
+    }, 12000);
+  }
+
+  /**
+   *
+   * @param {number} nextSlideIndex
+   */
+  nextSlide( nextSlideIndex ) {
+    const newActiveSliderMenuItem = document.querySelector(
+        `[data-slideid="${nextSlideIndex}"]`);
+    const activeSliderMenuItem = document.querySelector('.active');
+    const currentSlide = document.querySelector('.currentSlide');
+    const newCurrentSlide = document.getElementById(
+        `slide${nextSlideIndex}`);
+
+    newActiveSliderMenuItem.classList.add('active');
+    this.currentIndex = nextSlideIndex;
+    activeSliderMenuItem.classList.remove('active');
+    currentSlide.classList.remove('currentSlide');
+    newCurrentSlide.classList.add('currentSlide');
+  }
+
   changeSlide( e ) {
+    if (this.interval) {
+      clearInterval(this.interval);
+      this.interval = 0;
+    }
     const newActiveSliderMenuItem = e.target;
     if (+newActiveSliderMenuItem.dataset.slideid !== this.currentIndex) {
       const activeSliderMenuItem = document.querySelector('.active');
@@ -52,6 +122,7 @@ export default class Slider {
       activeSliderMenuItem.classList.remove('active');
       currentSlide.classList.remove('currentSlide');
       newCurrentSlide.classList.add('currentSlide');
+
     }
   }
 
