@@ -13,7 +13,7 @@ export default class Slider {
       this._currentIndex = 0;
       this._nextSlideIndex = null;
       this._interval = null;
-      this.changeSlide = this.changeSlide.bind(this);
+      this.onClickChangeSlide = this.onClickChangeSlide.bind(this);
     } else {
       throw new Error();
     }
@@ -91,39 +91,46 @@ export default class Slider {
    * @param {number} nextSlideIndex
    */
   nextSlide( nextSlideIndex ) {
-    const newActiveSliderMenuItem = document.querySelector(
+    const newActiveMenuItem = document.querySelector(
         `[data-slideid="${nextSlideIndex}"]`);
-    const activeSliderMenuItem = document.querySelector('.active');
+    const activeMenuItem = document.querySelector('.active');
     const currentSlide = document.querySelector('.currentSlide');
     const newCurrentSlide = document.getElementById(
         `slide${nextSlideIndex}`);
-
-    newActiveSliderMenuItem.classList.add('active');
-    this.currentIndex = nextSlideIndex;
-    activeSliderMenuItem.classList.remove('active');
-    currentSlide.classList.remove('currentSlide');
-    newCurrentSlide.classList.add('currentSlide');
+    this.changeSlide(newActiveMenuItem, activeMenuItem,
+        currentSlide, newCurrentSlide);
   }
 
-  changeSlide( e ) {
+  onClickChangeSlide( e ) {
     if (this.interval) {
       clearInterval(this.interval);
       this.interval = 0;
     }
-    const newActiveSliderMenuItem = e.target;
-    if (+newActiveSliderMenuItem.dataset.slideid !== this.currentIndex) {
-      const activeSliderMenuItem = document.querySelector('.active');
+    const newActiveMenuItem = e.target;
+    if (+newActiveMenuItem.dataset.slideid !== this.currentIndex) {
+      const activeMenuItem = document.querySelector('.active');
       const currentSlide = document.querySelector('.currentSlide');
       const newCurrentSlide = document.getElementById(
           `slide${e.target.dataset.slideid}`);
-
-      newActiveSliderMenuItem.classList.add('active');
-      this.currentIndex = +newActiveSliderMenuItem.dataset.slideid;
-      activeSliderMenuItem.classList.remove('active');
-      currentSlide.classList.remove('currentSlide');
-      newCurrentSlide.classList.add('currentSlide');
-
+      this.changeSlide(newActiveMenuItem, activeMenuItem,
+          currentSlide, newCurrentSlide);
     }
+  }
+
+  /**
+   *
+   * @param {HTMLElement} newActiveMenuItem
+   * @param {HTMLElement} activeMenuItem
+   * @param {HTMLElement} currentSlide
+   * @param {HTMLElement} newCurrentSlide
+   */
+  changeSlide(
+      newActiveMenuItem, activeMenuItem, currentSlide, newCurrentSlide ) {
+    newActiveMenuItem.classList.add('active');
+    this.currentIndex = +newActiveMenuItem.dataset.slideid;
+    activeMenuItem.classList.remove('active');
+    currentSlide.classList.remove('currentSlide');
+    newCurrentSlide.classList.add('currentSlide');
   }
 
   /**
@@ -147,7 +154,7 @@ export default class Slider {
       slideMenuListItem.classList.add('active');
     }
     slideMenuListItem.setAttribute('data-slideid', index);
-    slideMenuListItem.addEventListener('click', this.changeSlide);
+    slideMenuListItem.addEventListener('click', this.onClickChangeSlide);
     return slideMenuListItem;
   }
 
@@ -161,32 +168,41 @@ export default class Slider {
   }
 
   /*----------------------------render slide list-----------------------------*/
-  renderClientCite( cite ) {
+  renderClientCite( {author} ) {
     const clientCite = document.createElement('cite');
-    clientCite.innerText = cite;
+    const name = author.name;
+    const surname = author.surname;
+    const position = author.position;
+    const company = author.company;
+    clientCite.innerText =
+        `${name && surname
+            ? name + ' ' + surname
+            : ''}${position && company
+            ? ', ' + position + ' at ' + company
+            : ''}`;
     return clientCite;
   }
 
-  renderClientComment( comment ) {
+  renderClientComment( {comment} ) {
     const clientComment = document.createElement('p');
     clientComment.innerText = comment;
     return clientComment;
   }
 
-  renderClientCommentWrapper( comment ) {
+  renderClientCommentWrapper( client ) {
     const clientPhotoWrapper = document.createElement('div');
-    clientPhotoWrapper.appendChild(this.renderClientComment(comment));
+    clientPhotoWrapper.appendChild(this.renderClientComment(client));
     return clientPhotoWrapper;
   }
 
-  renderBlockquote( comment, cite ) {
+  renderBlockquote( client ) {
     const blockquote = document.createElement('blockquote');
-    blockquote.appendChild(this.renderClientCommentWrapper(comment));
-    blockquote.appendChild(this.renderClientCite(cite));
+    blockquote.appendChild(this.renderClientCommentWrapper(client));
+    blockquote.appendChild(this.renderClientCite(client));
     return blockquote;
   }
 
-  renderClientPhoto( photo ) {
+  renderClientPhoto( {photo} ) {
 
     const clientPhoto = new Image();
     clientPhoto.src = photo;
@@ -197,22 +213,22 @@ export default class Slider {
     return clientPhoto;
   }
 
-  renderClientPhotoWrapper( photo ) {
+  renderClientPhotoWrapper( client ) {
     const clientPhotoWrapper = document.createElement('div');
     clientPhotoWrapper.classList.add('clientPhotoWrapper');
-    clientPhotoWrapper.appendChild(this.renderClientPhoto(photo));
+    clientPhotoWrapper.appendChild(this.renderClientPhoto(client));
     return clientPhotoWrapper;
   }
 
-  renderSlide( {photo, comment, cite}, id ) {
+  renderSlide( client, id ) {
     const slide = document.createElement('li');
     slide.setAttribute('id', `slide${id}`);
     slide.classList.add('slide');
     if (id === this.currentIndex) {
       slide.classList.add('currentSlide');
     }
-    slide.appendChild(this.renderClientPhotoWrapper(photo));
-    slide.appendChild(this.renderBlockquote(comment, cite));
+    slide.appendChild(this.renderClientPhotoWrapper(client));
+    slide.appendChild(this.renderBlockquote(client));
     return slide;
   }
 
