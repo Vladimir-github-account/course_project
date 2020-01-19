@@ -1,32 +1,42 @@
 [
   {
-    "photo": "./assets/images/testimonial-1.jpg",
-    "comment": "\"Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...\"",
+    "photo": "./assets/images/armstrong2.jpg",
+    "comment": "Не знаю, доказал ли я это всем, но я точно доказал это себе: мы не прикованы к этой планете.",
     "author": {
-      "name": "Susan",
-      "surname": "Sims",
-      "position": "Interaction Designer",
-      "company": "Google"
+      "name": "Нил",
+      "surname": "Армстронг"
     }
   },
   {
-    "photo": "./assets/images/testimonial-2.jpg",
-    "comment": "\"Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur... \"",
+    "photo": "./assets/images/einstein.jpg",
+    "comment": "Есть только две бесконечные вещи: Вселенная и глупость. Хотя насчет Вселенной я не уверен.",
     "author": {
-      "name": "Joe",
-      "surname": "Dou",
-      "position": "Interaction Designer",
-      "company": "Apple"
+      "name": "Альберт",
+      "surname": "Эйнштейн"
     }
   },
   {
-    "photo": "./assets/images/testimonial-3.jpg",
-    "comment": "\"Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean lacinia bibendusadsadsadam nulla sed consectetur... \"",
+    "photo": "./assets/images/aldrin.jpg",
+    "comment": "\"Исследование течет по проводам нашего мозга. Если мы видим горизонт, мы хотим знать, что за ним\"",
     "author": {
-      "name": "Olivia",
-      "surname": "Smith",
-      "position": "Interaction Designer",
-      "company": "Google"
+      "name": "Базз",
+      "surname": "Олдрин"
+    }
+  },
+  {
+    "photo": "./assets/images/armstrong2.jpg",
+    "comment": "Это один маленький шаг для человека и огромный скачок для человечества.",
+    "author": {
+      "name": "Нил",
+      "surname": "Армстронг"
+    }
+  },
+  {
+    "photo": "./assets/images/yaroslav.jpg",
+    "comment": "\"Чтобы заглянуть на миллионы лет назад, не нужно машины времени, — достаточно поднять голову и посмотреть на звезды.\"",
+    "author": {
+      "name": "Ярослав",
+      "surname": "Вакуленко"
     }
   }
 ]

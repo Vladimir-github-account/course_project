@@ -1,46 +1,45 @@
 [
   {
-    "name": "Ruth Wood",
-    "position": "Founder, CEO",
-    "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit ametrisus. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollisornare vel eu leo.",
+    "name": "Клавдий Птолемей",
+    "position": "(90 – 168)",
+    "description": "Птолемей был одним из первых астрономов и разработал одну из самых первых моделей Вселенной на основе своих наблюдений ночного неба. В его модели Земля была в центре из нескольких «небесных сфер», а Солнце, звезды и другие планеты были фиксированными.  Его астрономические трактаты Almagest и Tetrabiblos каталогизировали 48 созвездий. Работы Птолемея легли в основу астрономии на больше чем тысячу лет.",
     "contacts": [
-      "https://www.facebook.com/todd.howard.39982631",
-      "https://www.linkedin.com/in/todd-howard-b1b54618a/",
-      "https://twitter.com/toddhbethesda"
+      "https://ru.wikipedia.org/wiki/%D0%9A%D0%BB%D0%B0%D0%B2%D0%B4%D0%B8%D0%B9_%D0%9F%D1%82%D0%BE%D0%BB%D0%B5%D0%BC%D0%B5%D0%B9/"
     ],
-    "profilePicture": "./assets/images/team-1.jpg"
+    "profilePicture": "./assets/images/ptolemey.jpg"
   },
   {
-    "name": "Timothy Reed",
-    "position": "Co-Founder, Developer",
-    "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit ametrisus. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollisornare vel eu leo.",
+    "name": "Галилео Галилей",
+    "position": "(15 февраля 1564 — 8 января 1642)",
+    "description": "Галилея называют отцом современной наблюдательной астрономии. Он разработал телескопы с приближением до 30X, а до этого все астрономические работы проводил невооруженным глазом. С помощью своих телескопов Галилей обнаружил четыре крупнейших луны Юпитера, наблюдал за пятнами на Солнце и подтвердил фазы Венеры. Также он поддержал гелиоцентрическую модель Коперника, за что преследовался Папой, испанской инквизицией и получил неодобрение со стороны коллег-астрономов.",
     "contacts": [
-      "https://www.facebook.com/todd.howard.39982631",
-      "https://www.linkedin.com/in/todd-howard-b1b54618a/",
-      "https://twitter.com/toddhbethesda"
+      "https://web.archive.org/web/20130523012151/http://www.liberliber.it/mediateca/libri/g/galilei/sidereus_nuncius/pdf/sidere_p.pdf",
+      "https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D0%BB%D0%B8%D0%BB%D0%B5%D0%B9,_%D0%93%D0%B0%D0%BB%D0%B8%D0%BB%D0%B5%D0%BE"
     ],
-    "profilePicture": "./assets/images/team-2.jpg"
+    "profilePicture": "./assets/images/galileo.jpg"
   },
   {
-    "name": "Victoria Valdez",
-    "position": "UI Designer",
-    "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit ametrisus. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollisornare vel eu leo.",
+    "name": "Исаак Ньютон",
+    "position": "(4 января 1643 — 31 марта 1727)",
+    "description": "Работы Исаака Ньютона в области физики и математики стали неизмеримо важными для современных знаний о космосе. Его три универсальных закона движения легли в основу физики, а его работы в исчислении дали огромный толчок этой области. Ньютон доказал оба кеплеровских закона планетарного движения и гелиоцентрическую природу Солнечной системы. Также он разработал первый практический отражающий телескоп. Его работа в изучении гравитации сыграла важную роль в развитии будущих теорий в области астрофизики.",
     "contacts": [
-      "https://www.facebook.com/todd.howard.39982631",
-      "https://www.linkedin.com/in/todd-howard-b1b54618a/",
-      "https://twitter.com/toddhbethesda"
+      "https://ru.wikipedia.org/wiki/%D0%9D%D1%8C%D1%8E%D1%82%D0%BE%D0%BD,_%D0%98%D1%81%D0%B0%D0%B0%D0%BA",
+      "https://www.eduspb.com/public/books/byograf/isaak_nyuton._ego_zhizn_i_nauchnaya_deyatelnost_mihail_filippov.pdf",
+      "https://www.eduspb.com/public/books/byograf/akroyd_newton.pdf"
     ],
-    "profilePicture": "./assets/images/team-3.jpg"
+    "profilePicture": "./assets/images/newton.jpg"
   },
   {
-    "name": "Beverly Little",
-    "position": "Data Scientist",
-    "description": "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit ametrisus. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollisornare vel eu leo.",
+    "name": "Стивен Хокинг",
+    "position": "(8 января 1942 — 14 марта 2018)",
+    "description": "Один из наиболее влиятельных и известных широкой общественности физиков-теоретиков нашего времени, один из основоположников квантовой космологии.\nОсновная область исследований Хокинга — космология и квантовая гравитация. Его главные достижения:\n-применение термодинамики к описанию чёрных дыр;\n-разработка в 1975 году теории о том, что чёрные дыры «испаряются» за счёт явления, получившего название излучение Хокинга",
     "contacts": [
-      "https://www.facebook.com/todd.howard.39982631",
-      "https://www.linkedin.com/in/todd-howard-b1b54618a/",
-      "https://twitter.com/toddhbethesda"
+      "https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D0%BA%D0%B8%D0%BD%D0%B3,_%D0%A1%D1%82%D0%B8%D0%B2%D0%B5%D0%BD",
+      "https://www.eduspb.com/public/books/classiki/hoking_s_mlodinov_l._-_kratchayshaya_istoriya_vremeni._-_spb._amfora_2011_180_str.pdf",
+      "https://knigoclub.at.ua/_ld/4/485_Stephen_Hawking.pdf",
+      "https://www.spbdk.ru/upload/iblock/11b/11b4d395b716e1a87623d586492392a6.pdf",
+      "https://cyberleninka.ru/article/n/udivitelnyy-mir-vselennoy-stivena-hokinga"
     ],
-    "profilePicture": "./assets/images/team-4.jpg"
+    "profilePicture": "./assets/images/hawking.jpg"
   }
 ]

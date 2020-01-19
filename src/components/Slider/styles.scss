@@ -3,7 +3,7 @@
 
 .clientsContainer {
   position: relative;
-  background-color: #53354a;
+  background-color: #333366;
 }
 
 /*SLIDE*/
@@ -18,7 +18,7 @@
   top: 0;
   right: 0;
   left: 0;
-  background-color: #53354a;
+  background-color: #333366;
   @media screen and (min-width: $md) {
     flex-direction: row;
   }
@@ -82,13 +82,13 @@
         max-height: 135px;
       }
       @media screen and (min-width: $xl) {
-        min-height: 175px;
-        max-height: 175px;
+        min-height: 200px;
+        max-height: 200px;
       }
 
       p {
         font-family: 'Cardo', sans-serif;
-        font-size: 24px;
+        font-size: 20px;
         font-style: italic;
         max-height: 141px;
         overflow: hidden;
@@ -99,7 +99,7 @@
         line-height: 1.2;
         @media screen and (min-width: $sm) {
           max-height: 135px;
-          font-size: 28px;
+          font-size: 24px;
         }
         @media screen and (min-width: $md) {
           max-height: 120px;
@@ -107,11 +107,11 @@
         }
         @media screen and (min-width: $lg) {
           max-height: 135px;
-          font-size: 28px;
+          font-size: 24px;
         }
         @media screen and (min-width: $xl) {
-          max-height: 175px;
-          font-size: 36px;
+          max-height: 200px;
+          font-size: 34px;
         }
       }
     }

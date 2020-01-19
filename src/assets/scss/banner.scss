@@ -6,14 +6,9 @@
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 690px;
-  max-height: 690px;
+  min-height: 750px;
+  max-height: 750px;
   background-color: #232844;
-
-  @media screen and (min-width: $sm) {
-    min-height: 750px;
-    max-height: 750px;
-  }
 }
 /*HEADER*/
 #pageHeader{
@@ -23,14 +18,14 @@
 }
 
 #pageHeader.fixed {
-  background-color: #292c47;
+  background-color: #060932;
 }
 
 #pageHeader.fixed .headerContainer {
   border-bottom: 0;
-  padding: 15px 0;
+  padding: 0px 0;
   @media screen and (min-width: $lg) {
-    padding: 25px 0;
+    padding: 0px 0;
   }
 }
 
@@ -43,7 +38,11 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   width: 90%;
   @media screen and (min-width: $md) {
-    padding: 40px 0;
+    padding: 20px 0;
+  }
+
+  img {
+    height: 75px;
   }
 }
 

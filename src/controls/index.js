@@ -9,3 +9,5 @@ export const openedWork = document.querySelector('.openedWork');
 export const openedWorkImage = document.querySelector('.openedWork .workImage');
 export const closeWorkButton = document.querySelector(
     '.openedWork .closeWorkButton');
+export const getStartedButton = document.querySelector(
+    '.btn[href="#features"]');

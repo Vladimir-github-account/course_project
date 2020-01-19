@@ -15,12 +15,14 @@ import {
   works,
   openedWork,
   closeWorkButton,
+  getStartedButton
 }                          from './controls';
 import employeesListLoader from './components/EmployeeListLoader';
 import SliderLoader        from './components/SliderLoader';
 import {
   openedWorkMouseUpHandler,
   openWork,
+  anchorLinkClickHandler,
   navLinkClickHandler,
   closeWork,
   closeNavigation,
@@ -47,6 +49,10 @@ navLinks.forEach(navLink =>
     navLink.onclick = navLinkClickHandler
 );
 navToggle.onclick = closeNavigation;
+
+// Get started button
+
+getStartedButton.onclick = anchorLinkClickHandler;
 
 // Page Scroll
 window.onscroll = checkScroll;

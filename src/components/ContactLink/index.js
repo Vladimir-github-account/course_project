@@ -1,4 +1,4 @@
-import {LINKS_ICON_MAP} from '../../constants';
+import {LINKS_ICON_MAP, PDF_CHECK} from '../../constants';
 
 /**
  *
@@ -15,8 +15,10 @@ export default function( href, className ) {
   const {hostname} = new URL(href);
   if (LINKS_ICON_MAP.has(hostname)) {
     icon.classList.add(...LINKS_ICON_MAP.get(hostname));
+  } else if (PDF_CHECK.test(href)) {
+    icon.classList.add('fas', 'fa-file-pdf');
   } else {
-    icon.classList.add('fab', 'fa-angellist');
+    icon.classList.add('fas', 'fa-book-open');
   }
   link.appendChild(icon);
   return link;
