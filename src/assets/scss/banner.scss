@@ -3,6 +3,8 @@
 
 #banner {
   background-image: url("../images/banner.jpg");
+  /*
+  */
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,9 +25,9 @@
 
 #pageHeader.fixed .headerContainer {
   border-bottom: 0;
-  padding: 0px 0;
+  padding: 9px 0;
   @media screen and (min-width: $lg) {
-    padding: 0px 0;
+    padding: 20px 0;
   }
 }
 
@@ -38,11 +40,11 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   width: 90%;
   @media screen and (min-width: $md) {
-    padding: 20px 0;
+    padding: 40px 0;
   }
 
   img {
-    height: 75px;
+    height: 22px;
   }
 }
 

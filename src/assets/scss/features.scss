@@ -1,27 +1,27 @@
 @import "break-points";
 @import "theme";
 
-#features {
+#science {
   margin-top: 70px;
   @media screen and (min-width: $lg) {
     margin-top: 85px;
   }
 }
 
-.featureContainer {
+.scienceContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.featureContainer .feature + .feature{
+.scienceContainer .science + .science {
   margin-top: 50px;
   @media screen and (min-width: $sm) {
     margin: 35px 0;
   }
 }
 
-.feature {
+.science {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;

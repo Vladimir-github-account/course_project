@@ -1,7 +1,7 @@
-import {openedWork} from '../controls';
+import {openedEvent} from '../controls';
 
 export default function closeWork() {
-  if (openedWork.classList.contains('opened')) {
-    openedWork.classList.remove('opened');
+  if (openedEvent.classList.contains('opened')) {
+    openedEvent.classList.remove('opened');
   }
 }

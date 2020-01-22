@@ -1,4 +1,4 @@
-import createEmployeeList from '../EmployeeList';
+import createEmployeeList from '../ScientistList';
 import {loadJson}         from '../../utils';
 import {Spinner}          from 'spin.js';
 import {spinnerOptions}   from '../../constants/index.js';

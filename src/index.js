@@ -9,15 +9,15 @@ import {
 }                          from './constants';
 import {
   navToggle,
-  teamContainer,
+  scientistsContainer,
   navLinks,
   clientsContainer,
-  works,
-  openedWork,
+  events,
+  openedEvent,
   closeWorkButton,
   getStartedButton
 }                          from './controls';
-import employeesListLoader from './components/EmployeeListLoader';
+import scientistListLoader from './components/ScientistListLoader';
 import SliderLoader        from './components/SliderLoader';
 import {
   openedWorkMouseUpHandler,
@@ -33,15 +33,15 @@ window.onload = onloadHandler;
 
 function onloadHandler() {
   checkScroll();
-  new employeesListLoader(teamContainer, EMPLOYEES_JSON_URl);
+  new scientistListLoader(scientistsContainer, EMPLOYEES_JSON_URl);
   new SliderLoader(clientsContainer, CLIENTS_JSON_URL);
 }
 
 //Open work
-works.forEach(work => work.onclick = openWork);
+events.forEach(work => work.onclick = openWork);
 
 //Close work
-openedWork.onmouseup = openedWorkMouseUpHandler;
+openedEvent.onmouseup = openedWorkMouseUpHandler;
 closeWorkButton.onclick = closeWork;
 
 // Mobile Navigation

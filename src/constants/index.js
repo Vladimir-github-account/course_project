@@ -1,6 +1,6 @@
 export const EMPLOYEES_JSON_URl = './data/employees.json';
 export const CLIENTS_JSON_URL = './data/clients.json';
-export const HEADER_HEIGHT = 75;
+export const HEADER_HEIGHT = 62;
 export const LINKS_ICON_MAP = new Map();
 export const PDF_CHECK = /.pdf$/;
 LINKS_ICON_MAP.set('www.facebook.com', ['fab', 'fa-facebook']);

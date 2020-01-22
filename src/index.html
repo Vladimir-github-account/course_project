@@ -6,7 +6,7 @@
     <title>Космос в нашей жизни</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700|Cardo:400i|Raleway:300,400,600,700&display=swap"
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700|PT+Serif:400i|Roboto:300,400,700&display=swap&subset=cyrillic"
           rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/android-icon-192x192.png">
@@ -19,14 +19,14 @@
     <header id="pageHeader">
         <div class="container headerContainer">
             <a href="#">
-                <img src="./assets/images/logo.png" alt="logo">
+                <img src="assets/images/logo.png" alt="logo">
             </a>
             <nav class="pageNavigation">
                 <ul>
-                    <li><a href="#features">Науки</a></li>
-                    <li><a href="#works">Достижения XX века</a></li>
-                    <li><a href="#team">Ученые</a></li>
-                    <li><a href="#clients">Цитаты</a></li>
+                    <li><a href="#science">Науки</a></li>
+                    <li><a href="#events">Достижения XX века</a></li>
+                    <li><a href="#scientists">Ученые</a></li>
+                    <li><a href="#slider">Цитаты</a></li>
                     <li><a href="#download">Материалы</a></li>
                 </ul>
             </nav>
@@ -42,13 +42,13 @@
         <p>Если вам интересно как устроен мир за пределами нашей планеты, то на этой странице Вы найдете соответствующую
             информацию в простом и понятном формате а так же ссылки на полезные ресурсы
         </p>
-        <a href="#features" class="btn">Начать!</a>
+        <a href="#science" class="btn">Начать!</a>
     </div>
 </section>
 <main>
-    <section id="features">
-        <div class="container featureContainer">
-            <div class="feature">
+    <section id="science">
+        <div class="container scienceContainer">
+            <div class="science">
                 <div><img src="./assets/images/1.png" alt=""></div>
                 <h2>Астрономия</h2>
                 <p> Астрономия – это наука, которая занимается изучением строения Вселенной. Она изучает расположение,
@@ -57,7 +57,7 @@
                     конкретно, то астрономия изучает Солнце и другие звезды, планеты и их спутники, черные дыры,
                     галактики и туманности, квазары, астероиды и многое другое.</p>
             </div>
-            <div class="feature">
+            <div class="science">
                 <div><img src="./assets/images/2.png" alt=""></div>
                 <h2>Небесная механика</h2>
                 <p>Эта наука обосновывает и изучает движение небесных тел в пространстве. Наука появилась лишь в XVII
@@ -67,7 +67,7 @@
                     аппаратов требовал точных расчётов траектории их движения, с учётом влияния на неё планет и других
                     небесных объектов. Со временем эти работы были выделены в отдельную науку — астродинамику.</p>
             </div>
-            <div class="feature">
+            <div class="science">
                 <div><img src="./assets/images/3.png" alt=""></div>
                 <h2>Астрофизика</h2>
                 <p>Наука, лежащая на стыке астрономии и физики занимается изучением процессов, протекающих в звёздах.
@@ -78,7 +78,7 @@
                     главный инструмент исследователя не телескоп или антенна, а суперкомпьютер или вычислительный
                     центр.</p>
             </div>
-            <div class="feature">
+            <div class="science">
                 <div><img src="./assets/images/4.png" alt=""></div>
                 <h2>Космология</h2>
                 <p>Долгие тысячелетия Человечество не сомневалось в статичности Вселенной. Лишь в начале XX века,
@@ -88,7 +88,7 @@
                     совершенствовались или отвергались по мере получения новых наблюдательных данных. Так родилась
                     космология – наука, изучающая рождение и эволюцию Вселенной как целого.</p>
             </div>
-            <div class="feature">
+            <div class="science">
                 <div><img src="./assets/images/5.png" alt=""></div>
                 <h2>Планетология</h2>
                 <p>Планетология — это комплекс наук, изучающих планеты и их спутники, а также солнечную систему в целом
@@ -97,7 +97,7 @@
                     свойства, химический состав, строение поверхности, внутренних и внешних оболочек планет и их
                     спутников, а также условия их формирования и развития.</p>
             </div>
-            <div class="feature">
+            <div class="science">
                 <div><img src="./assets/images/6.png" alt=""></div>
                 <h2>Космонавтика</h2>
                 <p>Отдельно стоит выделить космонавтику, в строгом смысле слова наукой не являющейся. Космонавтика — это
@@ -109,69 +109,69 @@
             </div>
         </div>
     </section>
-    <section id="works">
-        <div class="work"><img src="assets/images/1024px-Sputnik_asm.jpg"
-                               alt="Первый искусственный спутник земли «Спутник-1">
-            <div class="workInfo">
+    <section id="events">
+        <div class="event"><img src="assets/images/1024px-Sputnik_asm.jpg"
+                                alt="Первый искусственный спутник земли «Спутник-1">
+            <div class="eventInfo">
                 <h3>Запуск первого искусственного спутника земли «Спутник-1»</h3>
                 <h4>4 октября 1957 года</h4>
             </div>
         </div>
-        <div class="work"><img src="./assets/images/gagarin.jpg" alt="Юрий Гагарин">
-            <div class="workInfo">
+        <div class="event"><img src="./assets/images/gagarin.jpg" alt="Юрий Гагарин">
+            <div class="eventInfo">
                 <h3>Первый полёт человека в космос, Юрий Гагарин.</h3>
                 <h4>12 апреля 1961 года</h4>
             </div>
         </div>
-        <div class="work"><img src="./assets/images/valentina-tereshkova.jpg" alt="Валентина Терешкова">
-            <div class="workInfo">
+        <div class="event"><img src="./assets/images/valentina-tereshkova.jpg" alt="Валентина Терешкова">
+            <div class="eventInfo">
                 <h3>Первый в мире полёт в космос женщины-космонавта (Валентина Терешкова) на космическом корабле
                     «Восток-6»</h3>
                 <h4>16 июня 1963 года </h4>
             </div>
         </div>
-        <div class="work"><img src="./assets/images/leonov.jpg" alt="Алексей Леонов">
-            <div class="workInfo">
+        <div class="event"><img src="./assets/images/leonov.jpg" alt="Алексей Леонов">
+            <div class="eventInfo">
                 <h3>Первый в истории выход человека в открытый космос. Космонавт Алексей Леонов совершил выход в
                     открытый космос из корабля «Восход-2»</h3>
                 <h4>18 марта 1965 года</h4>
             </div>
         </div>
-        <div class="work"><img src="./assets/images/union4union5.jpg" alt="Корабли «Союз-4» и «Союз-5»">
-            <div class="workInfo">
+        <div class="event"><img src="./assets/images/union4union5.jpg" alt="Корабли «Союз-4» и «Союз-5»">
+            <div class="eventInfo">
                 <h3>Произведена первая стыковка двух пилотируемых космических кораблей «Союз-4» и «Союз-5»</h3>
                 <h4>16 января 1969 года</h4>
             </div>
         </div>
-        <div class="work"><img src="./assets/images/neil_armstrong.jpg" alt="Neil Armstrong">
-            <div class="workInfo">
+        <div class="event"><img src="./assets/images/neil_armstrong.jpg" alt="Neil Armstrong">
+            <div class="eventInfo">
                 <h3>Первая высадка человека на Луну (Н. Армстронг) в рамках лунной экспедиции корабля «Аполлон-11»,
                     первые пробы лунного грунта.</h3>
                 <h4>21 июля 1969 года</h4>
             </div>
         </div>
-        <div class="work"><img src="./assets/images/salyut-1.jpg" alt="Салют 1">
-            <div class="workInfo">
+        <div class="event"><img src="./assets/images/salyut-1.jpg" alt="Салют 1">
+            <div class="eventInfo">
                 <h3>Запущена первая орбитальная станция «Салют-1»</h3>
                 <h4>19 апреля 1971 года</h4>
             </div>
         </div>
-        <div class="work"><img src="./assets/images/shuttle.png"
-                               alt="Многоразовый транспортный космический корабль «Колумбия»">
-            <div class="workInfo">
+        <div class="event"><img src="./assets/images/shuttle.png"
+                                alt="Многоразовый транспортный космический корабль «Колумбия»">
+            <div class="eventInfo">
                 <h3>Первый полёт первого многоразового транспортного космического корабля «Колумбия»</h3>
                 <h4>12 апреля 1981 года</h4>
             </div>
         </div>
     </section>
 </main>
-<section id="team" class="container">
+<section id="scientists" class="container">
 </section>
-<section id="clients">
+<section id="slider">
 </section>
 <section id="download" class="container">
     <h3>Еще больше полезных материалов можно скачать здесь</h3>
-    <p>Вы получите архив с научно-популярной литературой на разные темы</p>
+    <p>Вы получите архив научно-популярной литературой</p>
     <a href="#" class="btn btnLarge">Скачать</a>
 </section>
 <footer id="pageFooter">

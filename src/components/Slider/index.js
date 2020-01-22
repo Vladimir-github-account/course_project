@@ -5,11 +5,11 @@ import './styles.scss';
 export default class Slider {
   /**
    *
-   * @param {Array<object>} clients
+   * @param {Array<object>} persons
    * */
-  constructor( clients ) {
-    if (clients.length) {
-      this._clients = clients;
+  constructor( persons ) {
+    if (persons.length) {
+      this._persons = persons;
       this._currentIndex = 0;
       this._nextSlideIndex = null;
       this._interval = null;
@@ -36,14 +36,14 @@ export default class Slider {
    * @param {number} value
    */
   set nextSlideIndex( value ) {
-    if (value < 0 || value > this.clients.length - 1) {
+    if (value < 0 || value > this.persons.length - 1) {
       throw new RangeError();
     }
     this._nextSlideIndex = value;
   }
 
-  get clients() {
-    return this._clients;
+  get persons() {
+    return this._persons;
   }
 
   get currentIndex() {
@@ -58,7 +58,7 @@ export default class Slider {
     if (isNaN(value)) {
       throw new TypeError();
     }
-    if (value < 0 || value > this._clients.length - 1) {
+    if (value < 0 || value > this._persons.length - 1) {
       throw new RangeError();
     }
     this._currentIndex = value;
@@ -81,7 +81,7 @@ export default class Slider {
   autoChange() {
     this.interval = setInterval(() => {
       this.nextSlideIndex = Slider.getNextIndex(this.currentIndex,
-          this.clients.length);
+          this.persons.length);
       this.nextSlide(this.nextSlideIndex);
     }, 12000);
   }
@@ -158,84 +158,78 @@ export default class Slider {
     return slideMenuListItem;
   }
 
-  renderSlideMenu( clients ) {
+  renderSlideMenu( persons ) {
     const sliderMenu = document.createElement('ul');
     sliderMenu.classList.add('sliderMenu');
-    clients.forEach(
+    persons.forEach(
         ( elem, index ) => sliderMenu.appendChild(
             this.renderSlideMenuListItem(index)));
     return sliderMenu;
   }
 
   /*----------------------------render slide list-----------------------------*/
-  renderClientCite( {author} ) {
-    const clientCite = document.createElement('cite');
+  renderPersonCite( {author} ) {
+    const personCite = document.createElement('cite');
     const name = author.name;
     const surname = author.surname;
-    const position = author.position;
-    const company = author.company;
-    clientCite.innerText =
-        `${name && surname
-            ? name + ' ' + surname
-            : ''}${position && company
-            ? ', ' + position + ' at ' + company
-            : ''}`;
-    return clientCite;
+    personCite.innerText =
+        `${name ? surname ? name + ' ' + surname : name : ''}`;
+    return personCite;
   }
 
-  renderClientComment( {comment} ) {
-    const clientComment = document.createElement('p');
-    clientComment.innerText = comment;
-    return clientComment;
+  renderPersonComment( {comment} ) {
+    const personComment = document.createElement('p');
+    personComment.innerText = comment;
+    return personComment;
   }
 
-  renderClientCommentWrapper( client ) {
-    const clientPhotoWrapper = document.createElement('div');
-    clientPhotoWrapper.appendChild(this.renderClientComment(client));
-    return clientPhotoWrapper;
+  renderPersonCommentWrapper( person ) {
+    const personPhotoWrapper = document.createElement('div');
+    personPhotoWrapper.appendChild(this.renderPersonComment(person));
+    return personPhotoWrapper;
   }
 
-  renderBlockquote( client ) {
+  renderBlockquote( person ) {
     const blockquote = document.createElement('blockquote');
-    blockquote.appendChild(this.renderClientCommentWrapper(client));
-    blockquote.appendChild(this.renderClientCite(client));
+    blockquote.appendChild(this.renderPersonCommentWrapper(person));
+    blockquote.appendChild(this.renderPersonCite(person));
     return blockquote;
   }
 
-  renderClientPhoto( {photo} ) {
+  renderPersonPhoto( {photo} ) {
 
     const clientPhoto = new Image();
     clientPhoto.src = photo;
     clientPhoto.onload = () => Slider.isCorrectImage(clientPhoto)
         ? clientPhoto.classList.add('correctImage')
         : clientPhoto.classList.add('height100');
-    clientPhoto.alt = 'client photo';
+    clientPhoto.alt = 'person photo';
     return clientPhoto;
   }
 
-  renderClientPhotoWrapper( client ) {
+  renderPersonPhotoWrapper( person ) {
     const clientPhotoWrapper = document.createElement('div');
     clientPhotoWrapper.classList.add('clientPhotoWrapper');
-    clientPhotoWrapper.appendChild(this.renderClientPhoto(client));
+    clientPhotoWrapper.appendChild(this.renderPersonPhoto(person));
     return clientPhotoWrapper;
   }
 
-  renderSlide( client, id ) {
+  renderSlide( person, id ) {
     const slide = document.createElement('li');
     slide.setAttribute('id', `slide${id}`);
     slide.classList.add('slide');
     if (id === this.currentIndex) {
       slide.classList.add('currentSlide');
     }
-    slide.appendChild(this.renderClientPhotoWrapper(client));
-    slide.appendChild(this.renderBlockquote(client));
+    slide.appendChild(this.renderPersonPhotoWrapper(person));
+    slide.appendChild(this.renderBlockquote(person));
     return slide;
   }
 
-  renderSlideList( clients ) {
+  renderSlideList( persons ) {
     const slideList = document.createElement('ul');
     slideList.classList.add('slideList');
-    clients.forEach(( elem, index ) => slideList.appendChild(
+    persons.forEach(( elem, index ) => slideList.appendChild(
         this.renderSlide(elem, index)));
     return slideList;
   }
@@ -243,8 +237,8 @@ export default class Slider {
   render() {
     const clientsContainer = document.createElement('div');
     clientsContainer.classList.add('clientsContainer');
-    clientsContainer.appendChild(this.renderSlideList(this.clients));
-    clientsContainer.appendChild(this.renderSlideMenu(this.clients));
+    clientsContainer.appendChild(this.renderSlideList(this.persons));
+    clientsContainer.appendChild(this.renderSlideMenu(this.persons));
     return clientsContainer;
   }
 }

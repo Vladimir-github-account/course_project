@@ -24,7 +24,7 @@
 
   p {
     color: $base-color;
-    font-weight: 600;
+    font-weight: 400;
     text-transform: uppercase;
     line-height: 1.5;
     margin-bottom: 40px;
@@ -34,7 +34,6 @@
     }
     @media screen and (min-width: $lg) {
       max-width: 66.66667%;
-      font-weight: bold;
     }
   }
 }

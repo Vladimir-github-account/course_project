@@ -1,8 +1,8 @@
-import {openedWork, openedWorkImage} from '../controls';
+import {openedEvent, openedEventImage} from '../controls';
 
 export default function openWork( e ) {
   if (e.currentTarget.childNodes[0].naturalWidth) {
-    openedWorkImage.src = e.currentTarget.childNodes[0].src;
-    openedWork.classList.add('opened');
+    openedEventImage.src = e.currentTarget.childNodes[0].src;
+    openedEvent.classList.add('opened');
   }
 }
